@@ -1,0 +1,12 @@
+html {
+  padding: env(safe-area-inset);
+}
+
+button:active,
+button:focus,
+button:target,
+button:visited {
+  outline: 0 !important;
+  background: none !important;
+  box-shadow: none !important;
+}
