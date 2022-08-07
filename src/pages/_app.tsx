@@ -35,7 +35,7 @@ export default function App({ Component, pageProps }: LayoutAppProps) {
         <meta charSet="utf-8" />
         <link rel="shortcut icon" href={`${WEB_URL}/favicon.ico`} />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="theme-color" content="#121212" />
+        <meta name="theme-color" content="#fff" />
         <link rel="apple-touch-icon" href={`${WEB_URL}/apple-touch-icon.png`} />
         <meta name="apple-mobile-web-app-title" content="" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
