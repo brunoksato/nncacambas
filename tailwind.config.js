@@ -17,9 +17,7 @@ module.exports = {
       textColor: {},
       fontSize: {},
       fontFamily: {
-        montserrat: `montserrat`,
-        sacramento: `sacramento`,
-        luckiestGuy: `luckiest guy`,
+        roboto: `Roboto`,
         raleway: `Raleway`,
       },
     },

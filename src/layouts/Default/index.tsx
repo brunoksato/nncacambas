@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import Navbar from '@global-components/Navbar';
+// import Navbar from '@global-components/Navbar';
+import NavbarSmall from '@global-components/NavbarSmall';
 
 type Props = {
   children: React.ReactNode;
@@ -20,7 +21,7 @@ const Wrap = styled.div`
 const Default = ({ children }: Props) => {
   return (
     <Container>
-      <Navbar />
+      <NavbarSmall />
       <Wrap>
         <div>{children}</div>
       </Wrap>
