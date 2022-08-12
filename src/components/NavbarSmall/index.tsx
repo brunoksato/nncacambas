@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { ChevronSmallRight } from '@styled-icons/entypo/ChevronSmallRight';
 import { CloseOutline } from '@styled-icons/evaicons-outline/CloseOutline';
 // import styled from 'styled-components';
+import { Link } from 'react-scroll';
 import { ClockHistory, Whatsapp } from 'styled-icons/bootstrap';
 import { Menu } from 'styled-icons/material-sharp';
 import Image from '@global-components/Image';
@@ -11,7 +12,7 @@ const NavbarSmall = () => {
 
   return (
     <>
-      <div className="w-full bg-[#1a202c] py-4">
+      <div className="w-full bg-[#1a202c] py-4 z-20 fixed">
         <div className="flex items-center justify-between w-full max-w-screen-xl mx-auto">
           <div className="flex items-center justify-between w-full px-8 xl:w-36 xl:px-0">
             <div className="relative w-full max-w-[80px] h-[44px] xl:max-w-[100px] xl:h-[60px]">
@@ -29,18 +30,53 @@ const NavbarSmall = () => {
           </div>
 
           <div className="items-center hidden space-x-8 text-white xl:flex">
-            <p className="font-bold uppercase cursor-pointer font-roboto">Empresa</p>
-            <p className="font-bold uppercase cursor-pointer font-roboto">Frota</p>
-            <p className="font-bold uppercase cursor-pointer font-roboto">Cidades</p>
-            <p className="font-bold uppercase cursor-pointer font-roboto">Descartes</p>
-            <p className="font-bold text-center uppercase cursor-pointer font-roboto">
+            <Link
+              className="font-bold cursor-pointer uLinkpercase font-roboto"
+              to={`sectionCompany`}
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              duration={250}
+            >
+              Empresa
+            </Link>
+            <Link
+              className="font-bold uppercase cursor-pointer font-roboto"
+              to={`sectionFleet`}
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              duration={250}
+            >
+              Frota
+            </Link>
+            <Link className="font-bold uppercase cursor-pointer font-roboto">Cidades</Link>
+            <Link
+              className="font-bold uppercase cursor-pointer font-roboto"
+              to={`sectionDiscards`}
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              duration={250}
+              sectionDiscards
+            >
+              Descartes
+            </Link>
+            <Link
+              className="font-bold text-center uppercase cursor-pointer font-roboto"
+              to={`sectionRestrictedTimeAndPlace`}
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              duration={250}
+            >
               Horários e <br />
               Locais Restritos
-            </p>
-            <p className="font-bold text-center uppercase cursor-pointer font-roboto">
+            </Link>
+            <Link className="font-bold text-center uppercase cursor-pointer font-roboto">
               Orientações <br />
               ao Gerador
-            </p>
+            </Link>
             <a
               className="bg-[#14950f] py-2 px-4 rounded-lg items-center flex focus:bg-[#14950f]"
               href="https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba"

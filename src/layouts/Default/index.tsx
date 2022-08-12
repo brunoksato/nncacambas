@@ -16,6 +16,7 @@ const Container = styled.div`
 const Wrap = styled.div`
   flex: 1 1 0%;
   background-color: #e2e8f0;
+  margin-top: 5.6rem;
 `;
 
 const Default = ({ children }: Props) => {
