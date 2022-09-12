@@ -2,14 +2,14 @@
 
 const nextConfig = {
   images: {
-    domains: [""],
-    loader: "custom",
+    domains: [''],
+    loader: 'custom',
     disableStaticImages: true,
   },
   compiler: {
     styledComponents: true,
-    swcMinify: true,
   },
+  swcMinify: true,
   reactStrictMode: true,
 };
 
