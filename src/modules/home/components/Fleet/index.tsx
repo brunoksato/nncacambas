@@ -19,13 +19,15 @@ const SectionFleet = () => {
     },
   };
   return (
-    <div className="w-full max-w-screen-xl mx-auto">
+    <div className="w-full max-w-screen-xl px-4 mx-auto lg:px-0">
       <Element
-        className="flex items-center justify-between w-full pb-16 space-x-10 pt-28"
+        className="flex flex-col items-center justify-between w-full pt-20 pb-16 space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 lg:pt-28"
         name="sectionFleet"
       >
         <div className="flex flex-col w-full">
-          <h4 className="text-5xl font-bold uppercase font-inter">Frota e Caixas estacionarias</h4>
+          <h1 className="text-4xl font-bold uppercase lg:text-5xl font-inter">
+            Frota e Caixas estacionarias
+          </h1>
           <p className="mt-8 text-lg font-inter text-[#474d57]">
             A N&N está sempre empenhada em um bom atendimento.
             <br />
@@ -47,7 +49,7 @@ const SectionFleet = () => {
             </p>
           </a>
         </div>
-        <div className="relative w-[55%]">
+        <div className="relative w-full lg:w-[55%]">
           <CustomCarousel
             swipeable
             draggable
@@ -62,13 +64,13 @@ const SectionFleet = () => {
             dotListClass="custom-dot-list-style"
             itemClass="carousel-item-padding-40-px"
           >
-            <div className="relative w-full max-w-full h-[460px] !rounded-md">
+            <div className="relative w-full max-w-full h-60 lg:h-[460px] !rounded-md">
               <Image src="/assets/cacamba.jpeg" layout="fill" />
             </div>
-            <div className="relative w-full max-w-full h-[460px] !rounded-md">
+            <div className="relative w-full max-w-full h-60 lg:h-[460px] !rounded-md">
               <Image src="/assets/cacamba2.jpeg" layout="fill" />
             </div>
-            <div className="relative w-full max-w-full h-[460px] !rounded-md">
+            <div className="relative w-full max-w-full h-60 lg:h-[460px] !rounded-md">
               <Image src="/assets/grupoCacambas.jpeg" layout="fill" />
             </div>
           </CustomCarousel>

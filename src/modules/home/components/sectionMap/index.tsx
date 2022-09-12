@@ -1,15 +1,18 @@
 import { Element } from 'react-scroll';
+import Image from '@global-components/Image';
+import useMediaQuery from '@global-hooks/useMediaQuery';
 
 const SectionMap = () => {
+  const isMobile = useMediaQuery(768);
   return (
-    <Element className="relative max-w-screen-xl mx-auto" name="sectionMap">
-      <div className="absolute top-0 left-0 w-full h-16 bg-gray-50" />
-      <iframe
-        src="https://www.google.com/maps/d/u/0/embed?mid=11ZsH5yq1CFqG5rjZag8f8-WRmvrlFdU&ehbc=2E312F"
-        width="100%"
-        height="480"
-        title="teste"
-      ></iframe>
+    <Element className="relative max-w-screen-xl px-4 mx-auto lg:px-0" name="sectionMap">
+      <p className="font-medium uppercase lg:ml-0 font-inter">Cidades que Atendemos:</p>
+      <div className="relative mt-8 max-w-screen-xl h-[420px] lg:h-[460px]">
+        <Image
+          src={isMobile ? `/assets/nnMapaMobile.png` : `/assets/nnMapaDesktop.png`}
+          layout="fill"
+        />
+      </div>
     </Element>
   );
 };

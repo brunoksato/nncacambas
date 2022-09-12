@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 // import Navbar from '@global-components/Navbar';
+import Footer from '@global-components/Footer';
 import NavbarSmall from '@global-components/NavbarSmall';
 
 type Props = {
@@ -26,6 +27,7 @@ const Default = ({ children }: Props) => {
       <Wrap>
         <div>{children}</div>
       </Wrap>
+      <Footer />
     </Container>
   );
 };

@@ -14,7 +14,7 @@ const Home = () => {
         <Discards />
       </div>
       <OrientationToGenerator />
-      <div className="py-10 bg-gray-50">
+      <div className="pt-10 pb-20 bg-gray-50">
         <SectionCompany />
         <SectionMap />
       </div>

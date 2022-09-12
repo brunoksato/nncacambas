@@ -3,19 +3,19 @@ import Image from '@global-components/Image';
 
 const OrientationToGenerator = () => {
   return (
-    <div className="w-full max-w-screen-xl mx-auto">
+    <div className="w-full max-w-screen-xl px-4 mx-auto lg:px-0">
       <Element className="flex items-center justify-between w-full mb-20" name="sectionOrientation">
         <div className="flex flex-col items-center w-full mt-4">
           <div className="relative w-[600px] h-[340px] mt-8 max-w-full">
             <Image src="assets/cacambaDesenhoNew.svg" layout="fill" />
           </div>
-          <div className="flex flex-wrap justify-center py-4 mt-8">
-            <div className="flex space-x-8">
+          <div className="flex flex-col flex-wrap justify-center py-4 lg:mt-8 lg:flex-row">
+            <div className="flex flex-col space-y-8 lg:space-x-8 lg:flex-row lg:space-y-0">
               <div className="relative flex flex-col w-full py-12 px-[1.25rem] max-w-[624px] border-[6px] border-solid border-[#F0D889] rounded-xl shadow-xl">
                 <h5 className="text-2xl mb-4 uppercase font-bold font-inter text-[#F0BA07]">
                   Orientações
                 </h5>
-                <ul className="space-y-4 text-lg font-inter">
+                <ul className="space-y-4 text-lg font-inter text-[#474d57]">
                   <div className="flex w-full">
                     <div className="w-[10px] h-[10px] mt-2 rounded-full mr-3 bg-[#F0D889]" />
                     <li className="flex flex-wrap w-full">
@@ -40,8 +40,8 @@ const OrientationToGenerator = () => {
                   <div className="flex w-full">
                     <div className="w-[10px] h-[10px] mt-2 rounded-full mr-3 bg-[#F0D889]" />
                     <li className="flex flex-wrap w-full">
-                      AO GERADOR <span>é proibido</span> mudar o posicionamento das caçambas após
-                      estacionada, seja dentro canteiro ou em via pública.
+                      AO GERADOR é proibido mudar o posicionamento das caçambas após estacionada,
+                      seja dentro canteiro ou em via pública.
                     </li>
                   </div>
                 </ul>
@@ -52,7 +52,7 @@ const OrientationToGenerator = () => {
                   <h5 className="text-2xl uppercase font-bold font-inter text-[#F0BA07]">
                     O transportador não pode
                   </h5>
-                  <ul className="mt-4 space-y-2 text-lg font-inter">
+                  <ul className="mt-4 space-y-2 text-lg font-inter text-[#474d57]">
                     <div className="flex w-full">
                       <div className="w-[10px] h-[10px] mt-2 rounded-full mr-3 bg-[#F0D889]" />
                       <li className="flex flex-wrap w-full">Transportar resíduos domiciliares;</li>
@@ -71,10 +71,10 @@ const OrientationToGenerator = () => {
                     </div>
                   </ul>
                 </div>
-                <p className="mt-4 text-lg leading-6 uppercase font-inter">
-                  <strong className="font-bold">OBS:</strong> As caçambas estacionárias podem
-                  permanecer em via pública pelo prazo máximo de 5 dias úteis, e em canteiros de
-                  obra por 7 dias úteis conforme determina a lei.
+                <p className="mt-4 leading-6 uppercase font-inter text-[#474d57] text-base lg:text-lg">
+                  <strong className="text-lg font-bold text-black">OBS:</strong> As caçambas
+                  estacionárias podem permanecer em via pública pelo prazo máximo de 5 dias úteis, e
+                  em canteiros de obra por 7 dias úteis conforme determina a lei.
                   {` `}
                 </p>
               </div>
@@ -85,7 +85,7 @@ const OrientationToGenerator = () => {
                 Definição de Materiais
               </h6>
               <div className="pb-4 text-lg">
-                <ul className="mt-4 font-inter">
+                <ul className="mt-4 font-inter text-[#474d57]">
                   <div className="flex w-full">
                     <div className="w-[10px] h-[10px] mt-2 rounded-full mr-3 bg-[#F0D889]" />
                     <li className="flex flex-wrap w-full">MADEIRA: Somente madeira.</li>
@@ -108,14 +108,11 @@ const OrientationToGenerator = () => {
                     <div className="w-[10px] h-[10px] mt-2 rounded-full mr-3 bg-[#F0D889]" />
                     <li className="flex flex-wrap w-full">GESSO: Somente gesso.</li>
                   </div>
-                  <div className="flex w-full mt-4">
-                    <div className="w-[10px] h-[10px] mt-2 rounded-full mr-3 bg-[#F0D889]" />
-                    <li className="flex flex-wrap w-full">
-                      OBS: Caso a caçamba esteja com material misturado, será gerado uma taxa no
-                      valor de R$100,00 de triagem, entulho com gesso, será cobrada a diferença do
-                      material de maior valor.
-                    </li>
-                  </div>
+                  <p className="w-full mt-4 text-base uppercase lg:text-lg">
+                    <strong className="text-lg font-bold text-black">OBS:</strong> Caso a caçamba
+                    esteja com material misturado, será gerado uma taxa no valor de R$100,00 de
+                    triagem, entulho com gesso, será cobrada a diferença do material de maior valor.
+                  </p>
                 </ul>
               </div>
             </div>
