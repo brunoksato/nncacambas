@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
-import Script from 'next/script';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -27,8 +26,34 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <Head>
-          <Script strategy="lazyOnload" src="https://rsms.me/inter/inter.css" />
-          <meta name="description" content="Locação de Caçambas e de caminhões" />
+          <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+          <meta
+            name="description"
+            content="A NN está sempre empenhada em um bom atendimento. Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma atenção na sinalizadas conforme exigido Lei 7.620/2008, assim como com o estado de conservação das Caixas estacionárias. Temos caixas estacionarias para entulho, caixas estacionarias fechadas para empresas, shoppings."
+          />
+          <meta charSet="utf-8" />
+          <link rel="shortcut icon" href={`/favicon.ico`} />
+          <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+          <meta name="theme-color" content="#fff" />
+          <meta name="apple-mobile-web-app-title" content="" />
+          <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+          <meta name="apple-mobile-web-app-capable" content="yes" />
+          <meta name="mobile-web-app-capable" content="yes" />
+          <link rel="canonical" href={`https://nncacambas.com.br`} />
+          <meta
+            name="description"
+            content="A NN está sempre empenhada em um bom atendimento. Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma atenção na sinalizadas conforme exigido Lei 7.620/2008, assim como com o estado de conservação das Caixas estacionárias. Temos caixas estacionarias para entulho, caixas estacionarias fechadas para empresas, shoppings."
+          />
+          <meta property="og:title" content="NN LOCAÇÃO DE CAÇAMBAS E CAMINHÕES" />
+          <meta
+            property="og:description"
+            content="A NN está sempre empenhada em um bom atendimento. Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma atenção na sinalizadas conforme exigido Lei 7.620/2008, assim como com o estado de conservação das Caixas estacionárias. Temos caixas estacionarias para entulho, caixas estacionarias fechadas para empresas, shoppings."
+          />
+          <meta property="og:url" content={`https://nncacambas.com.br`} />
+          <meta property="og:image" itemProp="image" content={`/assets/nnLogo.webp`} />
+          <meta property="og:type" content="website" />
+          <meta property="og:image:width" content="192" />
+          <meta property="og:image:height" content="192" />
         </Head>
         <body>
           <Main />

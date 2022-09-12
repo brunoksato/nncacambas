@@ -6,7 +6,6 @@ import Script from 'next/script';
 import Default from '@global-layouts/Default';
 import DesignSystemProvider from '@global-libs/styled-components';
 import '@styles/globals.css';
-import { WEB_URL } from '@configs/environment';
 
 export default function App({ Component, pageProps }: LayoutAppProps) {
   const Layout = Component.Layout ?? Default;
@@ -31,16 +30,8 @@ export default function App({ Component, pageProps }: LayoutAppProps) {
   return (
     <>
       <Head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-        <meta charSet="utf-8" />
-        <link rel="shortcut icon" href={`${WEB_URL}/favicon.ico`} />
-        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
-        <meta name="theme-color" content="#fff" />
-        <link rel="apple-touch-icon" href={`${WEB_URL}/apple-touch-icon.png`} />
-        <meta name="apple-mobile-web-app-title" content="" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>NN LOCAÇÃO DE CAÇAMBAS E CAMINHÕES</title>
       </Head>
       <Script
         id="gtag-base"

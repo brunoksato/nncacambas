@@ -68,7 +68,7 @@ const NavbarSmall = () => {
         style={isOpenMenuDrawer === true ? { left: 0 } : { left: `-100vw` }}
       >
         <div className="relative ml-4 w-full max-w-[80px] h-[44px]">
-          <Image src={`/assets/nnLogo.webp`} layout={`fill`} />
+          <Image src={`/assets/nnLogo.webp`} layout={`fill`} alt="N&N caçambas Logo" />
         </div>
         <svg
           viewBox="0 0 24 24"
