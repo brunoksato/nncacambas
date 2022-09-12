@@ -77,13 +77,13 @@ const SectionCompany = () => {
             itemClass="carousel-item-padding-40-px"
           >
             <div className="relative w-full max-w-full h-60 lg:h-[460px]">
-              <Image src="/assets/caminhao1.jpeg" layout="fill" alt="Caminhão com Caçamba" />
+              <Image src="/assets/caminhao1.webp" layout="fill" alt="Caminhão com Caçamba" />
             </div>
             <div className="relative w-full max-w-full h-60 lg:h-[460px]">
-              <Image src="/assets/caminhao2.jpeg" layout="fill" alt="Caminhão com Caçambas" />
+              <Image src="/assets/caminhao2.webp" layout="fill" alt="Caminhão com Caçambas" />
             </div>
             <div className="relative w-full max-w-full h-60 lg:h-[460px]">
-              <Image src="/assets/caminhao3.jpeg" layout="fill" alt="Caminhões com Caçambas" />
+              <Image src="/assets/caminhao3.webp" layout="fill" alt="Caminhões com Caçambas" />
             </div>
           </CustomCarousel>
         </div>

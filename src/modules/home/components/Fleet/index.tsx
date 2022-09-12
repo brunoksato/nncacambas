@@ -24,10 +24,10 @@ const SectionFleet = () => {
         name="sectionFleet"
       >
         <div className="flex flex-col w-full">
-          <h2 className="text-4xl font-bold uppercase lg:text-5xl font-inter">
+          <h2 className="font-sans text-4xl font-bold uppercase lg:text-5xl">
             Frota e Caixas estacionarias
           </h2>
-          <p className="mt-8 text-lg font-inter text-[#474d57]">
+          <p className="mt-8 text-lg font-sans text-[#474d57]">
             A N&N está sempre empenhada em um bom atendimento.
             <br />
             Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma
@@ -76,17 +76,17 @@ const SectionFleet = () => {
             itemClass="carousel-item-padding-40-px"
           >
             <div className="relative w-full max-w-full h-60 lg:h-[460px] !rounded-md">
-              <Image src="/assets/cacamba.jpeg" layout="fill" alt="Caçamba Vazia" />
+              <Image src="/assets/cacamba.webp" layout="fill" alt="Caçamba Vazia" />
             </div>
             <div className="relative w-full max-w-full h-60 lg:h-[460px] !rounded-md">
               <Image
-                src="/assets/cacamba2.jpeg"
+                src="/assets/cacamba2.webp"
                 layout="fill"
                 alt="Caixas Estacionarias Com Tampa"
               />
             </div>
             <div className="relative w-full max-w-full h-60 lg:h-[460px] !rounded-md">
-              <Image src="/assets/grupoCacambas.jpeg" layout="fill" alt="Conjunto de Caçambas" />
+              <Image src="/assets/grupoCacambas.webp" layout="fill" alt="Conjunto de Caçambas" />
             </div>
           </CustomCarousel>
         </div>
