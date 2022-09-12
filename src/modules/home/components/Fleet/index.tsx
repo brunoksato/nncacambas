@@ -74,7 +74,7 @@ const SectionFleet = () => {
             itemClass="carousel-item-padding-40-px"
           >
             <div className="relative w-full max-w-full h-60 lg:h-[460px] !rounded-md">
-              <Image src="/assets/cacamba.webp" layout="fill" alt="Caçamba Vazia" />
+              <Image src="/assets/cacamba.webp" layout="fill" alt="Caçamba Vazia" priority />
             </div>
             <div className="relative w-full max-w-full h-60 lg:h-[460px] !rounded-md">
               <Image
