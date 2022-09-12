@@ -27,6 +27,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+          <meta name="description" content="Locação de Caçambas e de caminhões" />
         </Head>
         <body>
           <Main />

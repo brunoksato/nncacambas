@@ -1,13 +1,12 @@
-import { Element } from 'react-scroll';
 import Image from '@global-components/Image';
 
 const OrientationToGenerator = () => {
   return (
     <div className="w-full max-w-screen-xl px-4 mx-auto lg:px-0">
-      <Element className="flex items-center justify-between w-full mb-20" name="sectionOrientation">
+      <div className="flex items-center justify-between w-full mb-20" id="sectionOrientation">
         <div className="flex flex-col items-center w-full mt-4">
           <div className="relative w-[600px] h-[340px] mt-8 max-w-full">
-            <Image src="assets/cacambaDesenhoNew.svg" layout="fill" />
+            <Image src="assets/cacambaDesenhoNew.svg" layout="fill" alt="Orientação ao Gerador" />
           </div>
           <div className="flex flex-col flex-wrap justify-center py-4 lg:mt-8 lg:flex-row">
             <div className="flex flex-col space-y-8 lg:space-x-8 lg:flex-row lg:space-y-0">
@@ -118,7 +117,7 @@ const OrientationToGenerator = () => {
             </div>
           </div>
         </div>
-      </Element>
+      </div>
     </div>
   );
 };

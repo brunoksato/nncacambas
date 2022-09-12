@@ -1,7 +1,5 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Element } from 'react-scroll';
-import styled from 'styled-components';
 import Image from '@global-components/Image';
 
 const SectionFleet = () => {
@@ -19,9 +17,9 @@ const SectionFleet = () => {
   };
   return (
     <div className="w-full max-w-screen-xl px-4 mx-auto lg:px-0">
-      <Element
+      <div
         className="flex flex-col justify-between w-full pt-20 pb-16 space-y-10 lg:space-y-0 lg:flex-row lg:space-x-10 lg:pt-28"
-        name="sectionFleet"
+        id="sectionFleet"
       >
         <div className="flex flex-col w-full">
           <h2 className="font-sans text-4xl font-bold uppercase lg:text-5xl">
@@ -61,7 +59,7 @@ const SectionFleet = () => {
           </a>
         </div>
         <div className="relative w-full lg:w-[55%]">
-          <CustomCarousel
+          <Carousel
             swipeable
             draggable
             showDots={true}
@@ -88,40 +86,10 @@ const SectionFleet = () => {
             <div className="relative w-full max-w-full h-60 lg:h-[460px] !rounded-md">
               <Image src="/assets/grupoCacambas.webp" layout="fill" alt="Conjunto de Caçambas" />
             </div>
-          </CustomCarousel>
+          </Carousel>
         </div>
-      </Element>
+      </div>
     </div>
   );
 };
 export default SectionFleet;
-
-const CustomCarousel = styled(Carousel)`
-  padding-bottom: 3rem;
-
-  img {
-    border-radius: 1rem !important;
-  }
-
-  .custom-dot-list-style {
-    bottom: 0.7rem;
-  }
-  .react-multi-carousel-dot {
-    border: none !important;
-    border-width: none !important ;
-    border-color: none !important;
-    outline: 0 !important;
-
-    button {
-      width: 10px;
-      height: 10px;
-      border: none;
-      background-color: #f1bd0c !important ;
-    }
-  }
-  .react-multi-carousel-dot--active {
-    button {
-      background-color: #1a202c !important ;
-    }
-  }
-`;

@@ -1,12 +1,7 @@
-import { Element } from 'react-scroll';
-
 const RestrictedTimeAndPlace = () => {
   return (
     <div className="w-full max-w-screen-xl px-4 mx-auto lg:px-0">
-      <Element
-        className="flex items-center justify-between w-full "
-        name="sectionRestrictedTimeAndPlace"
-      >
+      <div className="flex items-center justify-between w-full " id="sectionRestrictedTimeAndPlace">
         <div className="flex flex-col items-center w-full mt-28">
           <h4 className="text-5xl text-center font-bold text-[#fcd535] uppercase font-inter">
             Horários e Locais Restritos
@@ -20,7 +15,7 @@ const RestrictedTimeAndPlace = () => {
             solicitar as autorizações, e entregas fora do horario de funcionamento da empresa.
           </p>
         </div>
-      </Element>
+      </div>
     </div>
   );
 };

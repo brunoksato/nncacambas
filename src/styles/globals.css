@@ -4,6 +4,7 @@
 
 html {
   padding: env(safe-area-inset);
+  scroll-behavior: smooth;
 }
 
 button:active,
@@ -13,4 +14,30 @@ button:visited {
   outline: 0 !important;
   background: none !important;
   box-shadow: none !important;
+}
+
+.carousel-container {
+  padding-bottom: 3rem;
+}
+.carousel-container img {
+  border-radius: 1rem !important;
+}
+.carousel-container .custom-dot-list-style {
+  bottom: 0.7rem;
+}
+
+.carousel-container .react-multi-carousel-dot {
+  border: none !important;
+  border-width: none !important ;
+  border-color: none !important;
+  outline: 0 !important;
+}
+.carousel-container .react-multi-carousel-dot button {
+  width: 10px;
+  height: 10px;
+  border: none;
+  background-color: #f1bd0c !important ;
+}
+.carousel-container .react-multi-carousel-dot--active button {
+  background-color: #1a202c !important ;
 }

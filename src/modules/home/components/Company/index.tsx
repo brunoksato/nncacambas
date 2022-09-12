@@ -1,7 +1,5 @@
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
-import { Element } from 'react-scroll';
-import styled from 'styled-components';
 import Image from '@global-components/Image';
 
 const SectionCompany = () => {
@@ -19,9 +17,9 @@ const SectionCompany = () => {
   };
   return (
     <div className="w-full max-w-screen-xl px-4 pb-12 mx-auto lg:px-0">
-      <Element
+      <div
         className="flex flex-col items-center py-8 space-y-10 lg:space-y-0 lg:space-x-10 lg:flex-row"
-        name="sectionCompany"
+        id="sectionCompany"
       >
         <div className="w-full">
           <h1 className="text-4xl font-bold uppercase lg:text-5xl font-inter">
@@ -62,7 +60,7 @@ const SectionCompany = () => {
           </a>
         </div>
         <div className="relative w-full lg:w-[55%]">
-          <CustomCarousel
+          <Carousel
             swipeable
             draggable
             showDots={true}
@@ -77,7 +75,7 @@ const SectionCompany = () => {
             itemClass="carousel-item-padding-40-px"
           >
             <div className="relative w-full max-w-full h-60 lg:h-[460px]">
-              <Image src="/assets/caminhao1.webp" layout="fill" alt="Caminhão com Caçamba" />
+              <Image src="/assets/caminhao.webp" layout="fill" alt="Caminhão com Caçamba" />
             </div>
             <div className="relative w-full max-w-full h-60 lg:h-[460px]">
               <Image src="/assets/caminhao2.webp" layout="fill" alt="Caminhão com Caçambas" />
@@ -85,40 +83,10 @@ const SectionCompany = () => {
             <div className="relative w-full max-w-full h-60 lg:h-[460px]">
               <Image src="/assets/caminhao3.webp" layout="fill" alt="Caminhões com Caçambas" />
             </div>
-          </CustomCarousel>
+          </Carousel>
         </div>
-      </Element>
+      </div>
     </div>
   );
 };
 export default SectionCompany;
-
-const CustomCarousel = styled(Carousel)`
-  padding-bottom: 3rem;
-
-  img {
-    border-radius: 1rem !important;
-  }
-
-  .custom-dot-list-style {
-    bottom: 0.7rem;
-  }
-  .react-multi-carousel-dot {
-    border: none !important;
-    border-width: none !important ;
-    border-color: none !important;
-    outline: 0 !important;
-
-    button {
-      width: 10px;
-      height: 10px;
-      border: none;
-      background-color: #f1bd0c !important ;
-    }
-  }
-  .react-multi-carousel-dot--active {
-    button {
-      background-color: #1a202c !important ;
-    }
-  }
-`;
