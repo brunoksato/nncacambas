@@ -18,8 +18,7 @@ module.exports = {
       fontSize: {},
       fontFamily: {
         roboto: `Roboto`,
-        raleway: `Raleway`,
-        frederickaTheGreat: `Fredericka the Great`,
+        inter: `Inter`,
       },
     },
     variants: {

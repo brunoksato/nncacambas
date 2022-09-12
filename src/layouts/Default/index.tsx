@@ -15,7 +15,7 @@ const Container = styled.div`
 
 const Wrap = styled.div`
   flex: 1 1 0%;
-  background-color: #e2e8f0;
+  background-color: #fff;
   margin-top: 5.6rem;
 `;
 

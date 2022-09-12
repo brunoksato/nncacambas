@@ -2,6 +2,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Element } from 'react-scroll';
 import styled from 'styled-components';
+import { Whatsapp } from 'styled-icons/bootstrap';
 import Image from '@global-components/Image';
 
 const SectionFleet = () => {
@@ -18,37 +19,14 @@ const SectionFleet = () => {
     },
   };
   return (
-    <div>
-      <Element className="flex items-center justify-between w-full pt-28" name="sectionFleet">
-        <div className="relative w-[55%]">
-          <CustomCarousel
-            swipeable
-            draggable
-            showDots={true}
-            responsive={responsive}
-            infinite={true}
-            autoPlaySpeed={6000}
-            keyBoardControl={true}
-            arrows={false}
-            transitionDuration={500}
-            containerClass="carousel-container"
-            dotListClass="custom-dot-list-style"
-            itemClass="carousel-item-padding-40-px"
-          >
-            <div className="relative w-full max-w-full h-[460px]">
-              <Image src="/assets/cacamba.jpeg" layout="fill" />
-            </div>
-            <div className="relative w-full max-w-full h-[460px]">
-              <Image src="/assets/cacamba2.jpeg" layout="fill" />
-            </div>
-            <div className="relative w-full max-w-full h-[460px]">
-              <Image src="/assets/grupoCacambas.jpeg" layout="fill" />
-            </div>
-          </CustomCarousel>
-        </div>
-        <div className="w-1/2 text-right">
-          <h4 className="text-5xl font-bold uppercase font-roboto">Frota e Caixas estacionarias</h4>
-          <p className="mt-8 text-lg pl-14 font-roboto">
+    <div className="w-full max-w-screen-xl mx-auto">
+      <Element
+        className="flex items-center justify-between w-full pb-16 space-x-10 pt-28"
+        name="sectionFleet"
+      >
+        <div className="flex flex-col w-full">
+          <h4 className="text-5xl font-bold uppercase font-inter">Frota e Caixas estacionarias</h4>
+          <p className="mt-8 text-lg font-inter text-[#474d57]">
             A N&N está sempre empenhada em um bom atendimento.
             <br />
             Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma
@@ -58,6 +36,42 @@ const SectionFleet = () => {
             Temos caixas estacionarias para entulho, caixas estacionarias fechadas para empresas,
             shoppings.
           </p>
+          <a
+            className="bg-[#14950f] mt-6 max-w-max py-4 px-4 rounded-lg items-center flex focus:bg-[#14950f]"
+            href="https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba"
+            target={`_blank`}
+          >
+            <Whatsapp width={`24px`} height={`24px`} color={`#fff`} />
+            <p className="ml-2 text-sm leading-[14px] uppercase font-bold text-left text-white font-inter">
+              Solicite pelo Whatsapp
+            </p>
+          </a>
+        </div>
+        <div className="relative w-[55%]">
+          <CustomCarousel
+            swipeable
+            draggable
+            showDots={true}
+            responsive={responsive}
+            infinite={true}
+            autoPlaySpeed={6000}
+            keyBoardControl={true}
+            arrows={true}
+            transitionDuration={500}
+            containerClass="carousel-container"
+            dotListClass="custom-dot-list-style"
+            itemClass="carousel-item-padding-40-px"
+          >
+            <div className="relative w-full max-w-full h-[460px] !rounded-md">
+              <Image src="/assets/cacamba.jpeg" layout="fill" />
+            </div>
+            <div className="relative w-full max-w-full h-[460px] !rounded-md">
+              <Image src="/assets/cacamba2.jpeg" layout="fill" />
+            </div>
+            <div className="relative w-full max-w-full h-[460px] !rounded-md">
+              <Image src="/assets/grupoCacambas.jpeg" layout="fill" />
+            </div>
+          </CustomCarousel>
         </div>
       </Element>
     </div>

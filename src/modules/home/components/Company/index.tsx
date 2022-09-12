@@ -2,6 +2,7 @@ import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import { Element } from 'react-scroll';
 import styled from 'styled-components';
+import { Whatsapp } from 'styled-icons/bootstrap';
 import Image from '@global-components/Image';
 
 const SectionCompany = () => {
@@ -18,13 +19,13 @@ const SectionCompany = () => {
     },
   };
   return (
-    <div className="w-full">
-      <Element className="flex items-center pt-28" name="sectionCompany">
+    <div className="w-full max-w-screen-xl mx-auto">
+      <Element className="flex items-center py-8 space-x-10" name="sectionCompany">
         <div className="w-1/2">
-          <h1 className="text-5xl font-bold uppercase font-roboto">
+          <h1 className="text-5xl font-bold uppercase font-inter">
             n&n locação <br /> de caçambas e caminhões
           </h1>
-          <p className="w-3/4 mt-8 text-lg font-roboto">
+          <p className="w-full mt-8 text-lg font-inter">
             A empresa passou por varias formatos, consolidando em 2007, desde então vem atendendo,
             grandes, medias, pequenas empresas, e obras residenciais, com serviços de Locação de
             caçambas, e de Caminhões, zelando no atendimento de qualidade e as boas práticas de
@@ -33,6 +34,16 @@ const SectionCompany = () => {
             destinado aos aterros credenciados, a retirada do entulho é feita com total
             responsabilidade e preocupação com o meio ambiente.
           </p>
+          <a
+            className="bg-[#14950f] mt-4 max-w-max py-4 px-4 rounded-lg items-center flex focus:bg-[#14950f]"
+            href="https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba"
+            target={`_blank`}
+          >
+            <Whatsapp width={`24px`} height={`24px`} color={`#fff`} />
+            <p className="ml-2 text-sm leading-[14px] uppercase font-bold text-left text-white font-inter">
+              Solicite pelo Whatsapp
+            </p>
+          </a>
         </div>
         <div className="relative w-[55%]">
           <CustomCarousel
@@ -43,7 +54,7 @@ const SectionCompany = () => {
             infinite={true}
             autoPlaySpeed={6000}
             keyBoardControl={true}
-            arrows={false}
+            arrows
             transitionDuration={500}
             containerClass="carousel-container"
             dotListClass="custom-dot-list-style"
