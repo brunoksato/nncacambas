@@ -11,7 +11,7 @@ const OrientationToGenerator = () => {
           </div>
           <div className="flex flex-col flex-wrap justify-center py-4 lg:mt-8 lg:flex-row">
             <div className="flex flex-col space-y-8 lg:space-x-8 lg:flex-row lg:space-y-0">
-              <div className="relative flex flex-col w-full py-12 px-[1.25rem] max-w-[624px] border-[6px] border-solid border-[#F0D889] rounded-xl shadow-xl">
+              <div className="relative flex flex-col w-full py-12 px-[1.25rem] max-w-[624px] border-[6px] border-solid border-[#F0D889] rounded-xl">
                 <h5 className="text-2xl mb-4 uppercase font-bold font-inter text-[#F0BA07]">
                   Orientações
                 </h5>
@@ -47,7 +47,7 @@ const OrientationToGenerator = () => {
                 </ul>
               </div>
 
-              <div className="flex flex-col justify-between max-w-[624px] w-full py-12 px-[1.25rem] border-[6px] border-solid border-[#F0D889] rounded-xl shadow-xl">
+              <div className="flex flex-col justify-between max-w-[624px] w-full py-12 px-[1.25rem] border-[6px] border-solid border-[#F0D889] rounded-xl">
                 <div className="flex flex-col">
                   <h5 className="text-2xl uppercase font-bold font-inter text-[#F0BA07]">
                     O transportador não pode
@@ -80,16 +80,16 @@ const OrientationToGenerator = () => {
               </div>
             </div>
 
-            <div className="flex flex-col mt-8 w-full max-w-[624px] py-12 px-[1.25rem] border-[6px] border-solid border-[#F0D889] rounded-xl shadow-xl">
+            <div className="flex flex-col mt-8 w-full max-w-[624px] py-12 px-[1.25rem] border-[6px] border-solid border-[#F0D889] rounded-xl">
               <h6 className="uppercase font-inter text-[#F0BA07] text-2xl font-bold">
                 Definição de Materiais
               </h6>
               <div className="pb-4 text-lg">
                 <ul className="mt-4 font-inter text-[#474d57]">
-                  <div className="flex w-full">
+                  <li className="flex w-full">
                     <div className="w-[10px] h-[10px] mt-2 rounded-full mr-3 bg-[#F0D889]" />
-                    <li className="flex flex-wrap w-full">MADEIRA: Somente madeira.</li>
-                  </div>
+                    <div className="flex flex-wrap w-full">MADEIRA: Somente madeira.</div>
+                  </li>
                   <div className="flex w-full mt-4">
                     <div className="w-[10px] h-[10px] mt-2 rounded-full mr-3 bg-[#F0D889]" />
                     <li className="flex flex-wrap w-full">
