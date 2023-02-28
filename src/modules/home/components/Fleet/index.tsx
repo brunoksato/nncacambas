@@ -22,11 +22,11 @@ const SectionFleet = () => {
         id="sectionFleet"
       >
         <div className="flex flex-col w-full">
-          <h2 className="font-sans text-4xl font-bold uppercase lg:text-5xl">
-            Frota e Caixas estacionarias
-          </h2>
+          <h1 className="font-sans text-4xl font-bold uppercase lg:text-5xl">
+            Aluguel de caçambas e caminhões
+          </h1>
           <p className="mt-8 text-lg font-sans text-[#474d57]">
-            A N&N está sempre empenhada em um bom atendimento.
+            A N&N Locação de caçambas está sempre empenhada em um bom atendimento.
             <br />
             Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma
             atenção na sinalizadas conforme exigido Lei 7.620/2008, assim como com o estado de

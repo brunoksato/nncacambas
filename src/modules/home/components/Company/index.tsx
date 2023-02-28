@@ -22,9 +22,9 @@ const SectionCompany = () => {
         id="sectionCompany"
       >
         <div className="w-full">
-          <h1 className="text-4xl font-bold uppercase lg:text-5xl font-inter">
-            n&n locação <br /> de caçambas e caminhões
-          </h1>
+          <h2 className="text-4xl font-bold uppercase lg:text-5xl font-inter">
+            N&N locação de caçambas, aluguel de caçambas e caminhões
+          </h2>
           <p className="w-full mt-8 text-lg font-inter text-[#474d57]">
             A empresa passou por varias formatos, consolidando em 2007, desde então vem atendendo,
             grandes, medias, pequenas empresas, e obras residenciais, com serviços de Locação de
