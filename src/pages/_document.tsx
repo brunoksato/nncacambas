@@ -37,7 +37,7 @@ export default class MyDocument extends Document {
           <meta name="mobile-web-app-capable" content="yes" />
           <link rel="canonical" href={`https://nncacambas.com.br`} />
           <meta property="og:title" content="NN LOCAÇÃO DE CAÇAMBAS E CAMINHÕES" />
-
+          <meta name="robots" content="all" />
           <meta property="og:url" content={`https://nncacambas.com.br`} />
           <meta property="og:image" itemProp="image" content={`/assets/nnLogo.webp`} />
           <meta property="og:type" content="website" />
