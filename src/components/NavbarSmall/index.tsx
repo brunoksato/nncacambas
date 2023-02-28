@@ -10,7 +10,11 @@ const NavbarSmall = () => {
         <div className="flex items-center justify-between w-full max-w-screen-xl mx-auto">
           <div className="flex items-center justify-between w-full px-8 xl:w-36 xl:px-0">
             <div className="relative w-full max-w-[80px] h-[44px] xl:max-w-[100px] xl:h-[60px]">
-              <Image src={`/assets/nnLogo.webp`} layout={`fill`} alt="Logo N&N Caçambas" />
+              <Image
+                src={`/assets/nnLogo.webp`}
+                layout={`fill`}
+                alt="Aluguel de caçambas na N&N Caçambas"
+              />
             </div>
             <div className="block xl:hidden">
               <svg
