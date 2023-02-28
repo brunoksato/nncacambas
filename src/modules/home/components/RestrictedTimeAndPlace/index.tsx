@@ -19,4 +19,5 @@ const RestrictedTimeAndPlace = () => {
     </div>
   );
 };
+
 export default RestrictedTimeAndPlace;

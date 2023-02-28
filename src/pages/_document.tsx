@@ -27,10 +27,6 @@ export default class MyDocument extends Document {
       <Html lang="pt-br">
         <Head>
           <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-          <meta
-            name="description"
-            content="A NN está sempre empenhada em um bom atendimento. Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma atenção na sinalizadas conforme exigido Lei 7.620/2008, assim como com o estado de conservação das Caixas estacionárias. Temos caixas estacionarias para entulho, caixas estacionarias fechadas para empresas, shoppings."
-          />
           <meta charSet="utf-8" />
           <link rel="shortcut icon" href={`/favicon.ico`} />
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
@@ -40,15 +36,8 @@ export default class MyDocument extends Document {
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="mobile-web-app-capable" content="yes" />
           <link rel="canonical" href={`https://nncacambas.com.br`} />
-          <meta
-            name="description"
-            content="A NN está sempre empenhada em um bom atendimento. Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma atenção na sinalizadas conforme exigido Lei 7.620/2008, assim como com o estado de conservação das Caixas estacionárias. Temos caixas estacionarias para entulho, caixas estacionarias fechadas para empresas, shoppings."
-          />
           <meta property="og:title" content="NN LOCAÇÃO DE CAÇAMBAS E CAMINHÕES" />
-          <meta
-            property="og:description"
-            content="A NN está sempre empenhada em um bom atendimento. Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma atenção na sinalizadas conforme exigido Lei 7.620/2008, assim como com o estado de conservação das Caixas estacionárias. Temos caixas estacionarias para entulho, caixas estacionarias fechadas para empresas, shoppings."
-          />
+
           <meta property="og:url" content={`https://nncacambas.com.br`} />
           <meta property="og:image" itemProp="image" content={`/assets/nnLogo.webp`} />
           <meta property="og:type" content="website" />

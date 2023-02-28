@@ -18,6 +18,16 @@ const Home = () => {
         <SectionCompany />
         <SectionMap />
       </div>
+      {/* <div className="bg-white">
+        <div className="w-full max-w-screen-xl px-4 pb-12 mx-auto lg:px-0">
+          <div
+            className="flex flex-col items-center py-8 space-y-10 lg:space-y-0 lg:space-x-10 lg:flex-row"
+            id="contact"
+          >
+            <h4 className="text-[60px] text-black font-bold font-inter">Enderecos</h4>
+          </div>
+        </div>
+      </div> */}
     </>
   );
 };

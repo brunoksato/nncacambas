@@ -58,6 +58,12 @@ const NavbarSmall = () => {
               Orientações <br />
               ao Gerador
             </a>
+            {/* <a
+              className="font-bold text-center uppercase cursor-pointer font-inter"
+              href="#contact"
+            >
+              Endereços
+            </a> */}
           </div>
         </div>
       </div>
