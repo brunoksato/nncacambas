@@ -38,9 +38,8 @@ const SectionFleet = () => {
           <button
             className="bg-[#14950f] mt-6 lg:mt-20 max-w-max py-4 px-4 rounded-lg items-center flex focus:bg-[#14950f]"
             onClick={() => {
-              if (window && window.dataLayer) {
-                window.dataLayer.push({
-                  event: `conversion`,
+              if (window && window.gtag) {
+                window.gtag(`event`, `conversion`, {
                   send_to: `AW-11103703335/Z0u8CLuJ6KkYEKei1K4p`,
                 });
               }

@@ -65,8 +65,8 @@ export default class MyDocument extends Document {
             }}
           />
           <Script
-            id="gtag-gtag"
-            strategy="lazyOnload"
+            id="gtag-gtag2"
+            strategy="beforeInteractive"
             dangerouslySetInnerHTML={{
               __html: `
                  window.dataLayer = window.dataLayer || [];

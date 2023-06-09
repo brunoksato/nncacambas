@@ -40,17 +40,16 @@ const SectionCompany = () => {
           <button
             className="bg-[#14950f] mt-4 max-w-max py-4 px-4 rounded-lg items-center flex focus:bg-[#14950f]"
             onClick={() => {
-              if (window && window.dataLayer) {
-                window.dataLayer.push({
-                  event: `conversion`,
+              if (window && window.gtag) {
+                window.gtag(`event`, `conversion`, {
                   send_to: `AW-11103703335/Z0u8CLuJ6KkYEKei1K4p`,
-                  // event_callback: `https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba`,
                 });
-                window.open(
-                  `https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba`,
-                  `_blank`,
-                );
               }
+
+              window.open(
+                `https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba`,
+                `_blank`,
+              );
             }}
           >
             <svg

@@ -12,8 +12,7 @@ export default function App({ Component, pageProps }: LayoutAppProps) {
 
   const pageview = (url) => {
     if (window && window.dataLayer) {
-      window.dataLayer.push({
-        event: `pageview`,
+      window.gtag(`event`, `page_view`, {
         page: url,
       });
     }
