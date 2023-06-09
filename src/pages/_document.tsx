@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -43,6 +44,19 @@ export default class MyDocument extends Document {
           <meta property="og:type" content="website" />
           <meta property="og:image:width" content="192" />
           <meta property="og:image:height" content="192" />
+          <Script
+            id="gtag-base"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer', 'GTM-NN3T3P2');
+          `,
+            }}
+          />
         </Head>
         <body>
           <Main />
@@ -50,7 +64,7 @@ export default class MyDocument extends Document {
           <noscript>
             <iframe
               title="gtm"
-              src={`https://www.googletagmanager.com/ns.html?id=G-57G1RR67ND`}
+              src={`https://www.googletagmanager.com/ns.html?id=GTM-NN3T3P2`}
               height="0"
               width="0"
               style={{ display: `none`, visibility: `hidden` }}
