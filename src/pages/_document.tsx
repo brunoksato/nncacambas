@@ -57,6 +57,26 @@ export default class MyDocument extends Document {
           `,
             }}
           />
+          <Script
+            id="gtag-gtag"
+            strategy="beforeInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `https://www.googletagmanager.com/gtag/js?id=GTM-NN3T3P2`,
+            }}
+          />
+          <Script
+            id="gtag-gtag"
+            strategy="lazyOnload"
+            dangerouslySetInnerHTML={{
+              __html: `
+                 window.dataLayer = window.dataLayer || [];
+                function gtag() { dataLayer.push(arguments); }
+                gtag('js', new Date());
+
+                gtag('config', 'GTM-NN3T3P2');
+              `,
+            }}
+          />
         </Head>
         <body>
           <Main />

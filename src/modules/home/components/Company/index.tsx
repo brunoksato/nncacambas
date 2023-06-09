@@ -44,8 +44,12 @@ const SectionCompany = () => {
                 window.dataLayer.push({
                   event: `conversion`,
                   send_to: `AW-11103703335/Z0u8CLuJ6KkYEKei1K4p`,
-                  event_callback: `https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba`,
+                  // event_callback: `https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba`,
                 });
+                window.open(
+                  `https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba`,
+                  `_blank`,
+                );
               }
             }}
           >
