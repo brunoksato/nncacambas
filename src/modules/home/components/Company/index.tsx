@@ -38,7 +38,7 @@ const SectionCompany = () => {
             cidades vizinhas como: Guararema, Igaratá e Santa Branca.
           </p>
           <button
-            className="bg-[#14950f] mt-4 max-w-max py-4 px-4 rounded-lg items-center flex focus:bg-[#14950f]"
+            className="bg-[#14950f] mt-4 max-w-max py-4 px-4 rounded-lg items-center flex focus:!bg-[#14950f] active:!bg-[#14950f]"
             onClick={() => {
               if (window && window.gtag) {
                 window.gtag(`event`, `conversion`, {
