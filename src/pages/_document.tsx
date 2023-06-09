@@ -60,7 +60,7 @@ export default class MyDocument extends Document {
           <Script
             id="gtag-gtag"
             strategy="beforeInteractive"
-            src="https://www.googletagmanager.com/gtag/js?id=GTM-NN3T3P2"
+            src="https://www.googletagmanager.com/gtag/js?id=G-XZQQ7NPHNZ"
           />
           <Script
             id="gtag-gtag2"
@@ -71,7 +71,7 @@ export default class MyDocument extends Document {
                 function gtag() { dataLayer.push(arguments); }
                 gtag('js', new Date());
 
-                gtag('config', 'GTM-NN3T3P2');
+                gtag('config', 'G-XZQQ7NPHNZ');
               `,
             }}
           />
