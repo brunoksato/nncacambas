@@ -63,6 +63,11 @@ export default class MyDocument extends Document {
             src="https://www.googletagmanager.com/gtag/js?id=G-XZQQ7NPHNZ"
           />
           <Script
+            id="gtag-gtag"
+            strategy="beforeInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=AW-11103703335"
+          />
+          <Script
             id="gtag-gtag2"
             strategy="beforeInteractive"
             dangerouslySetInnerHTML={{
