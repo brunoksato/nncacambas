@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 import Image from '@global-components/Image';
 
 const NavbarSmall = () => {
@@ -10,11 +11,13 @@ const NavbarSmall = () => {
         <div className="flex items-center justify-between w-full max-w-screen-xl mx-auto">
           <div className="flex items-center justify-between w-full px-8 xl:w-36 xl:px-0">
             <div className="relative w-full max-w-[80px] h-[44px] xl:max-w-[100px] xl:h-[60px]">
-              <Image
-                src={`/assets/nnLogo.webp`}
-                layout={`fill`}
-                alt="Aluguel de caçambas na N&N Caçambas"
-              />
+              <Link href="/">
+                <Image
+                  src={`/assets/nnLogo.webp`}
+                  layout={`fill`}
+                  alt="Aluguel de caçambas na N&N Caçambas"
+                />
+              </Link>
             </div>
             <div className="block xl:hidden">
               <svg
@@ -62,6 +65,12 @@ const NavbarSmall = () => {
               Orientações <br />
               ao Gerador
             </a>
+            <Link
+              href="/contato"
+              className="font-bold text-center uppercase cursor-pointer font-inter"
+            >
+              Contato
+            </Link>
             {/* <a
               className="font-bold text-center uppercase cursor-pointer font-inter"
               href="#contact"
