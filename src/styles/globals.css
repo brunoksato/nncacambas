@@ -2,9 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  padding: env(safe-area-inset);
-  scroll-behavior: smooth;
+@layer base {
+  html {
+    font-family: Inter, system-ui, sans-serif !important;
+    padding: env(safe-area-inset);
+    scroll-behavior: smooth;
+  }
+
+  .slate-ImageElement-resizable {
+    width: 100% !important;
+  }
+  .prose {
+    color: var(--tw-prose-body);
+    max-width: 100ch !important;
+  }
 }
 
 button:active,
