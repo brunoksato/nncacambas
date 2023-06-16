@@ -5,6 +5,8 @@ function generateSiteMap() {
    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
      <url>
        <loc>https://nncacambas.com.br/</loc>
+       <loc>https://nncacambas.com.br/orcamento</loc>
+       <loc>https://nncacambas.com.br/contato</loc>
      </url>
    </urlset>
  `;

@@ -47,7 +47,7 @@ const SectionCompany = () => {
               }
 
               window.open(
-                `https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba`,
+                `https://api.whatsapp.com/send?1=ptBR&phone=5512996611332&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba`,
                 `_blank`,
               );
             }}

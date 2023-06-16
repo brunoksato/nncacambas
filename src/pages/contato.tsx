@@ -1,7 +1,12 @@
+import { useEffect } from 'react';
 import Head from 'next/head';
 import HomeScreen from '@home/screens/Main';
 
-const Home = () => {
+const Contato = () => {
+  useEffect(() => {
+    window.location.href = `https://api.whatsapp.com/send?1=ptBR&phone=5512996611332&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba`;
+  }, []);
+
   return (
     <>
       <Head>
@@ -41,4 +46,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Contato;
