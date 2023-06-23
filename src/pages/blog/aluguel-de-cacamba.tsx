@@ -104,8 +104,8 @@ const AluguelDeCacambaBlog = () => {
                 <div>
                   O custo do aluguel de uma caçamba tira entulho pode variar de acordo com a região,
                   a empresa, o tamanho da caçamba, o tipo de entulho e o tempo de permanência. Em
-                  média, o valor do aluguel de uma caçamba estacionária é de R$ 320 por um período
-                  de um a três dias úteis. Se você precisar da caçamba por mais tempo ou se
+                  média, o valor do aluguel de uma caçamba estacionária é de R$ 370 por um período
+                  de um a cinco dias úteis. Se você precisar da caçamba por mais tempo ou se
                   ultrapassar a capacidade máxima da caçamba (10 centímetros acima da borda), você
                   pode pagar multas adicionais.
                 </div>
