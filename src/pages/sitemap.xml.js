@@ -8,6 +8,7 @@ function generateSiteMap() {
        <loc>https://nncacambas.com.br/orcamento</loc>
        <loc>https://nncacambas.com.br/contato</loc>
        <loc>https://nncacambas.com.br/blog/aluguel-de-cacamba</loc>
+       <loc>https://nncacambas.com.br/blog/locacao-de-cacamba</loc>
      </url>
    </urlset>
  `;

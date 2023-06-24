@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import { Clock } from 'styled-icons/bootstrap';
+import BlogAction from '@global-components/BlogAction';
 import Image from '@global-components/Image';
 
 const AluguelDeCacambaBlog = () => {
@@ -28,7 +29,7 @@ const AluguelDeCacambaBlog = () => {
         <meta property="article:author" content={`https://www.nncacambas.com.br`} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={`https://nncacambas.com.br/blog/aluguel-de-cacamba`} />
-        <meta name="twitter:title" content="Vinco @vincopontovc | Twitter" />
+        <meta name="twitter:title" content="N&N Caçambas | Twitter" />
         <meta name="twitter:description" content="Como alugar uma caçamba tira entulho?" />
         <meta name="twitter:image" content={`https://www.nncacambas.com.br/assets/cacamba.webp`} />
         <meta name="robots" content="index,follow" />
@@ -138,7 +139,9 @@ const AluguelDeCacambaBlog = () => {
                   dúvidas sobre o assunto. Se você gostou deste conteúdo, compartilhe com os seus
                   amigos nas redes sociais!
                 </div>
-                <div></div>
+                <div className="mt-20">
+                  <BlogAction />
+                </div>
               </div>
             </div>
           </article>

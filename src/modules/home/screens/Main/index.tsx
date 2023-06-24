@@ -27,7 +27,7 @@ const Home = () => {
             <h4 className="text-[60px] text-black font-bold font-inter">Endereços</h4>
           </div>
 
-          <div className="flex my-12 space-x-4">
+          <div className="flex flex-col my-12 space-x-0 lg:space-x-4 lg:flex-row">
             <div className="flex flex-col justify-center w-full h-full p-4 space-y-4 bg-white rounded-lg lg:w-1/2">
               <h4 className="text-2xl font-bold font-inter">
                 Jacareí <span className="ml-2 text-sm text-gray-400">Matriz</span>
