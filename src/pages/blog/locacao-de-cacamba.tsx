@@ -10,11 +10,11 @@ const LocacaoDeCacambaBlog = () => {
         <title>Tudo sobre locação de caçamba | N&N Caçambas</title>
         <meta name="abstract" content="Tudo sobre locação de caçamba" />
         <meta name="title" content={`Tudo sobre locação de caçamba | N&N Caçambas`} />
-        <link rel="canonical" href={`https://nncacambas.com.br/blog/locaca-de-cacamba`} />
+        <link rel="canonical" href={`https://nncacambas.com.br/blog/locacao-de-cacamba`} />
         <meta name="description" content={`Tudo sobre locação de caçamba `} />
         <meta property="og:title" content={`Tudo sobre locação de caçamba | N&N Caçambas`} />
         <meta property="og:description" content="Tudo sobre locação de caçamba" />
-        <meta property="og:url" content={`https://nncacambas.com.br/blog/locaca-de-cacamba`} />
+        <meta property="og:url" content={`https://nncacambas.com.br/blog/locacao-de-cacamba`} />
         <meta
           property="og:image"
           itemProp="image"
@@ -25,7 +25,7 @@ const LocacaoDeCacambaBlog = () => {
         <meta property="og:image:height" content="192" />
         <meta property="article:author" content={`https://www.nncacambas.com.br`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={`https://nncacambas.com.br/blog/locaca-de-cacamba`} />
+        <meta name="twitter:url" content={`https://nncacambas.com.br/blog/locacao-de-cacamba`} />
         <meta name="twitter:title" content="N&N Caçambas | Twitter" />
         <meta name="twitter:description" content="Como alugar uma caçamba tira entulho?" />
         <meta

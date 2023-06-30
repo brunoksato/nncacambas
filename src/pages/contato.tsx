@@ -21,11 +21,11 @@ const Contato = () => {
           content="A NN está sempre empenhada em um bom atendimento. Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma atenção na sinalizadas conforme exigido Lei 7.620/2008, assim como com o estado de conservação das Caixas estacionárias. Temos caixas estacionarias para entulho, caixas estacionarias fechadas para empresas, shoppings."
         />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://nncacambas.com.br" />
+        <meta property="og:url" content="https://nncacambas.com.br/contato" />
         <meta property="og:title" content="Aluguel de Caçambas N&N Caçambas" />
         <meta property="og:image" content="https://nncacambas.com.br/assets/nnLogo.webp" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://nncacambas.com.br" />
+        <meta property="twitter:url" content="https://nncacambas.com.br/contato" />
         <meta property="twitter:title" content="Aluguel de Caçambas N&N Caçambas" />
         <meta
           property="twitter:description"
