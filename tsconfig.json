@@ -32,6 +32,7 @@
       "@fonts/*": ["../public/fonts/*"],
       "@translations": ["./translations"],
       "@home/*": ["./modules/home/*"],
+      "@global-modules/*": ["./modules/*"],
       "@meetingRoom/*": ["./modules/meetingRoom/*"],
       "@diningRoom/*": ["./modules/diningRoom/*"],
       "@workRoom/*": ["./modules/workRoom/*"],

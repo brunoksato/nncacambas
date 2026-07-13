@@ -28,17 +28,13 @@ const SectionCompany = () => {
             N&N locação de caçambas, aluguel de caçambas e caminhões
           </h2>
           <p className="w-full mt-8 text-lg font-inter text-[#474d57]">
-            A empresa passou por varias formatos, consolidando em 2007, desde então vem atendendo,
-            grandes, medias, pequenas empresas, e obras residenciais, com serviços de Locação de
-            caçambas, e de Caminhões, zelando no atendimento de qualidade e as boas práticas de
-            sustentabilidade, respeitando as leis ambientais. A N&N Locações é uma empresa em
-            conformidade com decreto, sob o número de cadastro 19 na Urbam, nosso material é
-            destinado aos aterros credenciados, a retirada do entulho é feita com total
-            responsabilidade e preocupação com o meio ambiente. A empresa está localizada em São
-            José dos Campos com a Matriz, estabeleceu sua filial em 2012 em Jacareí e vem atendendo
-            cidades vizinhas como: Guararema, Igaratá e Santa Branca.
+            Consolidada em 2007, a N&N atende empresas, obras residenciais e reformas com locação de
+            caçambas e caminhões. A empresa mantém o cadastro 19 na Urbam, frota própria revisada e
+            destinação dos resíduos em usinas credenciadas, com documentação do descarte. O
+            atendimento está concentrado em São José dos Campos e Jacareí, onde a N&N mantém suas
+            duas unidades — a operação de Jacareí existe desde 2012.
           </p>
-          <CallToAction />
+          <CallToAction placement="empresa_home" />
         </div>
         <div className="relative w-full lg:w-[55%]">
           <Carousel

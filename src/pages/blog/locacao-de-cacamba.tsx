@@ -63,7 +63,7 @@ const LocacaoDeCacambaBlog = () => {
             <div className="flex flex-col items-center justify-center w-full ">
               <div className="w-full h-[193px] md:h-[525px] my-8 mt-12 relative max-w-4xl mx-auto">
                 <Image
-                  src="https://www.nncacambas.com.br/assets/grupoCacambas.webp"
+                  src="/assets/grupoCacambas.webp"
                   alt={`Imagem do artigo`}
                   className="w-full h-auto rounded-3xl"
                   layout="fill"

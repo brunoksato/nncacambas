@@ -1,10 +1,15 @@
 import { useEffect } from 'react';
 import Head from 'next/head';
+import { buildWhatsAppUrl } from '@configs/contact';
 import HomeScreen from '@home/screens/Main';
 
 const Contato = () => {
   useEffect(() => {
-    window.location.href = `https://api.whatsapp.com/send?1=ptBR&phone=5512996611332&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba%20e%20tenho%20um%20cupom%20de%2010%%20desconto%20apenas%20pro%20mês%20de%20Julho`;
+    window.location.replace(
+      buildWhatsAppUrl({
+        message: `Olá, vim pelo site e quero solicitar uma caçamba usando o cupom anunciado.`,
+      }),
+    );
   }, []);
 
   return (
@@ -32,14 +37,14 @@ const Contato = () => {
           content="A NN está sempre empenhada em um bom atendimento. Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma atenção na sinalizadas conforme exigido Lei 7.620/2008, assim como com o estado de conservação das Caixas estacionárias. Temos caixas estacionarias para entulho, caixas estacionarias fechadas para empresas, shoppings."
         />
         <meta property="twitter:image" content="https://nncacambas.com.br/assets/nnLogo.webp" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="noindex, follow" />
         <meta name="author" content="NN Caçambas" />
         <meta
           name="keywords"
           content="aluguel de caçamba,aluguel de caçamba para entulho,locação de caçamba,tira entulho jacarei,caçamba entulho,aluguel de caçamba preço,preço de caçamba,valor de aluguel de caçamba,aluguel de caçamba sjc,caçamba entulho sjc,tira entulho telefone,aluguel de caçamba jacarei,caçamba de entulho locação,aluguel caçamba,caçamba entulho preço,tira entulho sjc,empresa de aluguel de caçamba,caçamba entulho jacarei,preço caçamba entulho,caçamba de entulho preço,aluguel de caçamba telefone,tira entulho preço"
         />
         <meta name="language" content="Portuguese" />
-        <link rel="canonical" href="https://nncacambas.com.br/cupom" />
+        <link rel="canonical" href="https://www.nncacambas.com.br/" />
       </Head>
       <HomeScreen />
     </>

@@ -11,17 +11,18 @@ export default function App({ Component, pageProps }: LayoutAppProps) {
   const router = useRouter();
 
   const pageview = (url) => {
-    if (window && window.dataLayer) {
+    if (typeof window !== `undefined` && window.gtag) {
       window.gtag(`event`, `page_view`, {
-        page: url,
+        page_path: url,
       });
     }
   };
 
   useEffect(() => {
-    router.events.on(`routeChangeComplete`, (url) => pageview(url));
+    const handleRouteChange = (url) => pageview(url);
+    router.events.on(`routeChangeComplete`, handleRouteChange);
     return () => {
-      router.events.off(`routeChangeComplete`, (url) => pageview(url));
+      router.events.off(`routeChangeComplete`, handleRouteChange);
     };
   }, [router.events]);
 

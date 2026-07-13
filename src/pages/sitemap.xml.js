@@ -1,34 +1,37 @@
-//pages/sitemap.xml.js
+const siteUrl = `https://www.nncacambas.com.br`;
+
+const pages = [
+  `/`,
+  `/aluguel-de-cacamba-sjc`,
+  `/aluguel-de-cacamba-jacarei`,
+  `/blog/aluguel-de-cacamba`,
+  `/blog/locacao-de-cacamba`,
+];
 
 function generateSiteMap() {
   return `<?xml version="1.0" encoding="UTF-8"?>
-   <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-     <url>
-       <loc>https://nncacambas.com.br/</loc>
-       <loc>https://nncacambas.com.br/orcamento</loc>
-       <loc>https://nncacambas.com.br/contato</loc>
-       <loc>https://nncacambas.com.br/cupom</loc>
-       <loc>https://nncacambas.com.br/blog/aluguel-de-cacamba</loc>
-       <loc>https://nncacambas.com.br/blog/locacao-de-cacamba</loc>
-     </url>
-   </urlset>
- `;
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${pages
+  .map(
+    (path) => `  <url>
+    <loc>${siteUrl}${path}</loc>
+  </url>`,
+  )
+  .join(`\n`)}
+</urlset>`;
 }
 
 function SiteMap() {
-  // getServerSideProps will do the heavy lifting
+  return null;
 }
 
 export async function getServerSideProps({ res }) {
   res.setHeader(`Content-Type`, `text/xml`);
-  // we send the XML to the browser
-  const sitemap = generateSiteMap();
-  res.write(sitemap);
+  res.setHeader(`Cache-Control`, `public, s-maxage=86400, stale-while-revalidate=43200`);
+  res.write(generateSiteMap());
   res.end();
 
-  return {
-    props: {},
-  };
+  return { props: {} };
 }
 
 export default SiteMap;

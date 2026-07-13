@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from '@global-components/Image';
+import { buildWhatsAppUrl, trackWhatsAppClick } from '@configs/contact';
 
 const NavbarSmall = () => {
   const [isOpenMenuDrawer, setIsOpenMenuDrawer] = useState<boolean>(false);
@@ -225,8 +226,10 @@ const NavbarSmall = () => {
           <div className="flex px-4 w-max">
             <a
               className="bg-[#14950f] mb-12 w-full py-4 px-4 rounded-lg mt-8 items-center flex focus:bg-[#14950f]"
-              href="https://api.whatsapp.com/send?1=ptBR&phone=5512988903512&text=Olá%20quero%20solicitar%20uma%20ca%C3%A7amba"
+              href={buildWhatsAppUrl()}
               target={`_blank`}
+              rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick(`SJC e Jacareí`, `menu_mobile`)}
             >
               <svg
                 viewBox="0 0 16 16"

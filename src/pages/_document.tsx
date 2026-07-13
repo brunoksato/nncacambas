@@ -27,7 +27,6 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt-br">
         <Head>
-          <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
           <meta charSet="utf-8" />
           <link rel="shortcut icon" href={`/favicon.ico`} />
           <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
@@ -36,14 +35,6 @@ export default class MyDocument extends Document {
           <meta name="apple-mobile-web-app-status-bar-style" content="default" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta name="mobile-web-app-capable" content="yes" />
-          <link rel="canonical" href={`https://nncacambas.com.br`} />
-          <meta property="og:title" content="NN LOCAÇÃO DE CAÇAMBAS E CAMINHÕES" />
-          <meta name="robots" content="all" />
-          <meta property="og:url" content={`https://nncacambas.com.br`} />
-          <meta property="og:image" itemProp="image" content={`/assets/nnLogo.webp`} />
-          <meta property="og:type" content="website" />
-          <meta property="og:image:width" content="192" />
-          <meta property="og:image:height" content="192" />
           <Script
             id="gtag-base"
             strategy="beforeInteractive"
@@ -71,6 +62,7 @@ export default class MyDocument extends Document {
                 function gtag() { dataLayer.push(arguments); }
                 gtag('js', new Date());
                 gtag('config', 'G-XZQQ7NPHNZ');
+                gtag('config', 'AW-11103703335');
               `,
             }}
           />

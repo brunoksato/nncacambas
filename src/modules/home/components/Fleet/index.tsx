@@ -24,19 +24,17 @@ const SectionFleet = () => {
       >
         <div className="flex flex-col w-full">
           <h1 className="font-sans text-4xl font-bold uppercase lg:text-5xl">
-            Aluguel de caçambas e caminhões
+            Aluguel de caçambas em SJC e Jacareí
           </h1>
           <p className="mt-8 text-lg font-sans text-[#474d57]">
-            A N&N Locação de caçambas está sempre empenhada em um bom atendimento.
-            <br />
-            Possuimos uma frota de caminhões própria revisada semanalmente, as caçambas recebem uma
-            atenção na sinalizadas conforme exigido Lei 7.620/2008, assim como com o estado de
-            conservação das Caixas estacionárias.
-            <br />
-            Temos caixas estacionarias para entulho, caixas estacionarias fechadas para empresas,
-            shoppings.
+            Caçambas para obras, reformas, residências e empresas. Trabalhamos com frota própria
+            revisada semanalmente, equipamentos sinalizados e descarte documentado em usinas
+            credenciadas.
           </p>
-          <CallToAction />
+          <p className="mt-4 text-sm font-bold uppercase tracking-wide text-[#746000]">
+            Atendimento somente em São José dos Campos e Jacareí
+          </p>
+          <CallToAction placement="hero_home" />
         </div>
         <div className="relative w-full lg:w-[55%]">
           <Carousel
