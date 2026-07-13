@@ -5,12 +5,7 @@ const AluguelDeCacambaJacarei = () => (
   <CityLanding
     city="Jacareí"
     slug="aluguel-de-cacamba-jacarei"
-    address={{
-      street: `Avenida Egídio Antônio Coimbra, 739`,
-      neighborhood: `Residencial Parque dos Sinos`,
-      postalCode: `12328-513`,
-    }}
-    localProof="Unidade local em Jacareí desde 2012."
+    localProof="Única unidade da N&N, em Jacareí, desde 2012."
   />
 );
 

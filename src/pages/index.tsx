@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import AdsLanding from '@global-layouts/AdsLanding';
 import HomeScreen from '@home/screens/Main';
 
 const Home = () => {
@@ -12,10 +13,40 @@ const Home = () => {
     telephone: `+55 12 99661-1332`,
     foundingDate: `2007`,
     description,
+    address: {
+      '@type': `PostalAddress`,
+      streetAddress: `Avenida Egídio Antônio Coimbra, 739`,
+      addressLocality: `Jacareí`,
+      addressRegion: `SP`,
+      postalCode: `12328-513`,
+      addressCountry: `BR`,
+    },
     areaServed: [
       { '@type': `City`, name: `São José dos Campos` },
       { '@type': `City`, name: `Jacareí` },
     ],
+  };
+  const faqSchema = {
+    '@context': `https://schema.org`,
+    '@type': `FAQPage`,
+    mainEntity: [
+      [
+        `Quanto custa o aluguel da caçamba?`,
+        `O valor depende da cidade, bairro, material e prazo. Envie essas informações pelo WhatsApp para receber o orçamento correto.`,
+      ],
+      [
+        `Vocês atendem São José dos Campos?`,
+        `Sim. A N&N atende São José dos Campos e Jacareí e possui uma única unidade física em Jacareí.`,
+      ],
+      [
+        `A caçamba pode ficar na rua?`,
+        `Depende das regras e condições do local. O endereço precisa ser informado para verificar sinalização, espaço e eventual autorização.`,
+      ],
+    ].map(([question, answer]) => ({
+      '@type': `Question`,
+      name: question,
+      acceptedAnswer: { '@type': `Answer`, text: answer },
+    })),
   };
 
   return (
@@ -45,10 +76,16 @@ const Home = () => {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
       </Head>
       <HomeScreen />
     </>
   );
 };
+
+Home.Layout = AdsLanding;
 
 export default Home;

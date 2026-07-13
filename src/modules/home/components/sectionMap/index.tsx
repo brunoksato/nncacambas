@@ -16,9 +16,13 @@ const SectionMap = () => {
           href="/aluguel-de-cacamba-sjc"
           className="group rounded-2xl bg-[#111313] p-7 text-white transition hover:-translate-y-1 hover:shadow-xl"
         >
-          <p className="text-sm font-bold uppercase tracking-wider text-[#fcd535]">Unidade SJC</p>
+          <p className="text-sm font-bold uppercase tracking-wider text-[#fcd535]">
+            Atendimento em SJC
+          </p>
           <h3 className="mt-4 text-3xl font-extrabold">São José dos Campos</h3>
-          <p className="mt-3 leading-7 text-white/65">Rua Tijuca, 370 · Jardim Satélite</p>
+          <p className="mt-3 leading-7 text-white/65">
+            Entrega e retirada agendadas pela unidade de Jacareí.
+          </p>
           <p className="mt-6 font-bold text-[#fcd535]">Ver atendimento em SJC →</p>
         </Link>
         <Link
@@ -26,7 +30,7 @@ const SectionMap = () => {
           className="group rounded-2xl bg-[#fcd535] p-7 text-black transition hover:-translate-y-1 hover:shadow-xl"
         >
           <p className="text-sm font-bold uppercase tracking-wider text-black/55">
-            Unidade Jacareí
+            Única unidade · Jacareí
           </p>
           <h3 className="mt-4 text-3xl font-extrabold">Jacareí</h3>
           <p className="mt-3 leading-7 text-black/65">

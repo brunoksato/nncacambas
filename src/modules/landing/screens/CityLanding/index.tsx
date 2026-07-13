@@ -1,19 +1,23 @@
 import Head from 'next/head';
-import Link from 'next/link';
 import CallToAction from '@global-components/CallToAction';
 import Image from '@global-components/Image';
+import QuoteForm from '@global-components/QuoteForm';
+import SalesFooter from '@global-components/SalesFooter';
+import SalesHeader from '@global-components/SalesHeader';
 import { WHATSAPP_DISPLAY } from '@configs/contact';
 
 export type CityLandingConfig = {
   city: `São José dos Campos` | `Jacareí`;
   slug: string;
-  address: {
-    street: string;
-    neighborhood: string;
-    postalCode: string;
-  };
   localProof: string;
 };
+
+const unitAddress = {
+  street: `Avenida Egídio Antônio Coimbra, 739`,
+  neighborhood: `Residencial Parque dos Sinos`,
+  city: `Jacareí`,
+  postalCode: `12328-513`,
+} as const;
 
 const benefits = [
   { title: `Desde 2007`, description: `Experiência em obras residenciais e empresas.` },
@@ -35,7 +39,8 @@ const forbiddenMaterials = [
   `Materiais acima do limite da caçamba`,
 ] as const;
 
-export default function CityLanding({ city, slug, address, localProof }: CityLandingConfig) {
+export default function CityLanding({ city, slug, localProof }: CityLandingConfig) {
+  const isJacarei = city === `Jacareí`;
   const canonical = `https://www.nncacambas.com.br/${slug}`;
   const title = `Aluguel de Caçamba em ${city} | N&N Caçambas`;
   const description = `Aluguel de caçamba para obras, reformas e empresas em ${city}. Frota própria, descarte documentado e atendimento desde 2007. Peça seu orçamento.`;
@@ -69,10 +74,10 @@ export default function CityLanding({ city, slug, address, localProof }: CityLan
     areaServed: { '@type': `City`, name: city },
     address: {
       '@type': `PostalAddress`,
-      streetAddress: address.street,
-      addressLocality: city,
+      streetAddress: unitAddress.street,
+      addressLocality: unitAddress.city,
       addressRegion: `SP`,
-      postalCode: address.postalCode,
+      postalCode: unitAddress.postalCode,
       addressCountry: `BR`,
     },
   };
@@ -113,66 +118,39 @@ export default function CityLanding({ city, slug, address, localProof }: CityLan
       </Head>
 
       <div className="min-h-screen overflow-x-hidden bg-white text-[#151719] font-inter">
-        <header className="border-b border-black/10 bg-[#fcd535]">
-          <div className="flex h-20 max-w-screen-xl items-center justify-between px-4 mx-auto lg:px-0">
-            <Link
-              href="/"
-              className="relative block w-[82px] h-[58px]"
-              aria-label="N&N Caçambas — início"
-            >
-              <Image
-                src="/assets/nnLogo.webp"
-                layout="fill"
-                objectFit="contain"
-                alt="N&N Caçambas"
-                priority
-              />
-            </Link>
-            <div className="hidden text-sm font-bold text-black/70 md:block">
-              Atendimento somente em SJC e Jacareí
-            </div>
-            <CallToAction
-              city={city}
-              placement="cabecalho_landing"
-              label="Pedir orçamento"
-              className="!mt-0 !py-3"
-            />
-          </div>
-        </header>
+        <SalesHeader city={city} />
 
         <main>
-          <section className="relative bg-[#111313] text-white">
+          <section className="relative isolate overflow-hidden bg-[#111313] text-white">
+            <div className="absolute inset-0 -z-20 opacity-20">
+              <Image
+                src="/assets/cacamba.webp"
+                layout="fill"
+                objectFit="cover"
+                sizes="100vw"
+                alt=""
+                priority
+              />
+            </div>
+            <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#111313] via-[#111313]/95 to-[#111313]/75" />
             <div className="grid max-w-screen-xl gap-10 px-4 py-14 mx-auto lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-0 lg:py-20">
               <div>
-                <p className="text-sm font-bold tracking-[0.18em] uppercase text-[#fcd535]">
+                <p className="inline-flex rounded-full border border-[#fcd535]/40 bg-[#fcd535]/10 px-4 py-2 text-xs font-black tracking-[0.16em] uppercase text-[#fcd535]">
                   Aluguel de caçamba em {city}
                 </p>
-                <h1 className="max-w-3xl mt-4 text-4xl font-extrabold leading-[1.08] md:text-6xl">
-                  Caçamba para sua obra, com entrega e retirada agendadas
+                <h1 className="max-w-3xl mt-5 text-4xl font-black leading-[1.04] tracking-[-0.03em] md:text-6xl">
+                  Precisa de caçamba em {city}? Peça agora pelo WhatsApp.
                 </h1>
                 <p className="max-w-2xl mt-6 text-lg leading-8 text-white/75">
-                  Atendimento local para reformas, construções, residências e empresas. Frota
-                  própria, caçambas sinalizadas e descarte em usinas credenciadas.
+                  Para reformas, construções, residências e empresas, com frota própria, caçambas
+                  sinalizadas e descarte em usinas credenciadas.
                 </p>
-                <CallToAction city={city} placement="hero_landing" label="Orçar pelo WhatsApp" />
-                <p className="mt-3 text-sm text-white/60">
-                  Informe seu bairro e o material. Retornamos com disponibilidade e condições.
-                </p>
-              </div>
-              <div className="relative h-[310px] overflow-hidden rounded-2xl border border-white/10 shadow-2xl md:h-[430px]">
-                <Image
-                  src="/assets/cacamba.webp"
-                  layout="fill"
-                  objectFit="cover"
-                  sizes="(max-width: 1024px) 100vw, 48vw"
-                  alt={`Caçamba estacionária para aluguel em ${city}`}
-                  priority
-                />
-                <div className="absolute inset-x-4 bottom-4 rounded-xl bg-black/75 p-4 backdrop-blur-sm">
-                  <p className="font-bold text-[#fcd535]">Atendimento local em {city}</p>
-                  <p className="mt-1 text-sm text-white/75">{localProof}</p>
+                <CallToAction city={city} placement="hero_landing" label="Pedir orçamento agora" />
+                <div className="mt-7 rounded-xl border border-white/10 bg-white/5 p-4 text-sm font-bold text-white/70 backdrop-blur-sm">
+                  ✓ {localProof}
                 </div>
               </div>
+              <QuoteForm initialCity={city} placement="form_hero_landing" />
             </div>
           </section>
 
@@ -271,24 +249,26 @@ export default function CityLanding({ city, slug, address, localProof }: CityLan
                   Atendimento em {city}
                 </p>
                 <h2 className="mt-3 text-3xl font-extrabold md:text-5xl">
-                  Empresa local e regularizada
+                  {isJacarei
+                    ? `Única unidade da N&N em Jacareí`
+                    : `Atendimento em SJC, com base em Jacareí`}
                 </h2>
                 <p className="mt-5 leading-7 text-[#5b6165]">
                   A N&N atua desde 2007, mantém frota própria revisada, caçambas sinalizadas e
-                  documentação do descarte.
+                  documentação do descarte. A única unidade física fica em Jacareí.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl bg-[#f7f7f5] p-7 sm:col-span-2">
                   <p className="text-sm font-bold uppercase tracking-wider text-[#746000]">
-                    Unidade local
+                    Única unidade — Jacareí
                   </p>
                   <address className="mt-3 not-italic text-xl font-bold leading-8">
-                    {address.street}
+                    {unitAddress.street}
                     <br />
-                    {address.neighborhood}, {city} — SP
+                    {unitAddress.neighborhood}, {unitAddress.city} — SP
                     <br />
-                    CEP {address.postalCode}
+                    CEP {unitAddress.postalCode}
                   </address>
                 </div>
                 <div className="rounded-2xl border border-black/10 p-7">
@@ -349,15 +329,7 @@ export default function CityLanding({ city, slug, address, localProof }: CityLan
           </section>
         </main>
 
-        <footer className="bg-[#111313] px-4 py-8 text-center text-sm text-white/55">
-          <p>
-            © {new Date().getFullYear()} N&N Caçambas · Atendimento somente em São José dos Campos e
-            Jacareí
-          </p>
-          <Link href="/" className="inline-block mt-3 font-bold text-[#fcd535] hover:underline">
-            Conheça o site completo
-          </Link>
-        </footer>
+        <SalesFooter />
 
         <div className="fixed inset-x-0 bottom-0 z-50 border-t border-black/10 bg-white/95 p-3 backdrop-blur md:hidden">
           <CallToAction
