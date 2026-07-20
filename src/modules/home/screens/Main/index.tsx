@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     question: `Vocês atendem São José dos Campos?`,
-    answer: `Sim. Atendemos São José dos Campos e Jacareí. A única unidade física da N&N fica em Jacareí.`,
+    answer: `Sim. Atendemos São José dos Campos e Jacareí, com sede operacional em Jacareí.`,
   },
   {
     question: `O que não pode ser colocado na caçamba?`,
@@ -219,8 +219,8 @@ const Home = () => {
               </p>
               <h2 className="mt-3 text-4xl font-black leading-tight md:text-5xl">SJC e Jacareí</h2>
               <p className="mt-5 leading-7 text-[#5b6165]">
-                A única unidade física fica em Jacareí. O atendimento e as entregas cobrem também
-                São José dos Campos.
+                Atendemos e realizamos entregas em Jacareí e São José dos Campos, com sede
+                operacional em Jacareí.
               </p>
             </div>
             <div className="grid gap-5 sm:grid-cols-2">
@@ -233,7 +233,7 @@ const Home = () => {
                 </p>
                 <h3 className="mt-4 text-2xl font-black">São José dos Campos</h3>
                 <p className="mt-3 leading-7 text-white/60">
-                  Serviço realizado pela equipe da unidade de Jacareí.
+                  Atendimento e entregas agendadas em toda a cidade.
                 </p>
                 <p className="mt-6 font-black text-[#fcd535]">Orçar em SJC →</p>
               </Link>
@@ -242,7 +242,7 @@ const Home = () => {
                 className="rounded-2xl bg-[#fcd535] p-7 text-black transition hover:-translate-y-1 hover:shadow-xl"
               >
                 <p className="text-xs font-black uppercase tracking-[0.14em] text-black/50">
-                  Única unidade
+                  Sede operacional
                 </p>
                 <h3 className="mt-4 text-2xl font-black">Jacareí</h3>
                 <p className="mt-3 leading-7 text-black/60">

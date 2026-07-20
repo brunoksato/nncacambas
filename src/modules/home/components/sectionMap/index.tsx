@@ -21,7 +21,7 @@ const SectionMap = () => {
           </p>
           <h3 className="mt-4 text-3xl font-extrabold">São José dos Campos</h3>
           <p className="mt-3 leading-7 text-white/65">
-            Entrega e retirada agendadas pela unidade de Jacareí.
+            Entrega e retirada agendadas com atendimento dedicado à cidade.
           </p>
           <p className="mt-6 font-bold text-[#fcd535]">Ver atendimento em SJC →</p>
         </Link>
@@ -30,7 +30,7 @@ const SectionMap = () => {
           className="group rounded-2xl bg-[#fcd535] p-7 text-black transition hover:-translate-y-1 hover:shadow-xl"
         >
           <p className="text-sm font-bold uppercase tracking-wider text-black/55">
-            Única unidade · Jacareí
+            Sede operacional · Jacareí
           </p>
           <h3 className="mt-4 text-3xl font-extrabold">Jacareí</h3>
           <p className="mt-3 leading-7 text-black/65">

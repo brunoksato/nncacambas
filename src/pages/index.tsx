@@ -36,7 +36,7 @@ const Home = () => {
       ],
       [
         `Vocês atendem São José dos Campos?`,
-        `Sim. A N&N atende São José dos Campos e Jacareí e possui uma única unidade física em Jacareí.`,
+        `Sim. A N&N atende São José dos Campos e Jacareí, com sede operacional em Jacareí.`,
       ],
       [
         `A caçamba pode ficar na rua?`,

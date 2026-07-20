@@ -31,7 +31,7 @@ const SectionCompany = () => {
             Consolidada em 2007, a N&N atende empresas, obras residenciais e reformas com locação de
             caçambas e caminhões. A empresa mantém o cadastro 19 na Urbam, frota própria revisada e
             destinação dos resíduos em usinas credenciadas, com documentação do descarte. O
-            atendimento cobre São José dos Campos e Jacareí. A única unidade física fica em Jacareí,
+            atendimento cobre São José dos Campos e Jacareí. A sede operacional fica em Jacareí,
             onde a N&N opera desde 2012.
           </p>
           <CallToAction placement="empresa_home" />

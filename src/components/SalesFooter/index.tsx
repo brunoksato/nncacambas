@@ -9,8 +9,8 @@ export default function SalesFooter() {
         <div>
           <p className="text-2xl font-extrabold">N&N Caçambas</p>
           <p className="mt-3 max-w-2xl leading-7 text-white/60">
-            Aluguel de caçambas em São José dos Campos e Jacareí. Única unidade física na Avenida
-            Egídio Antônio Coimbra, 739, Parque dos Sinos, Jacareí — SP.
+            Aluguel de caçambas em São José dos Campos e Jacareí. Sede operacional na Avenida Egídio
+            Antônio Coimbra, 739, Parque dos Sinos, Jacareí — SP.
           </p>
           <p className="mt-2 text-sm font-bold text-[#fcd535]">WhatsApp {WHATSAPP_DISPLAY}</p>
         </div>

@@ -42,9 +42,9 @@ const forbiddenMaterials = [
 export default function CityLanding({ city, slug, localProof }: CityLandingConfig) {
   const isJacarei = city === `Jacareí`;
   const isRegional = city === `SJC e Jacareí`;
-  let serviceHeading = `Atendimento em SJC, com base em Jacareí`;
-  if (isJacarei) serviceHeading = `Única unidade da N&N em Jacareí`;
-  if (isRegional) serviceHeading = `Atendimento nas duas cidades, com base em Jacareí`;
+  let serviceHeading = `Atendimento de caçambas em SJC`;
+  if (isJacarei) serviceHeading = `Atendimento de caçambas em Jacareí`;
+  if (isRegional) serviceHeading = `Atendimento local em SJC e Jacareí`;
   const canonical = `https://www.nncacambas.com.br/${slug}`;
   const title = `Aluguel de Caçamba em ${city} | N&N Caçambas`;
   const description = `Aluguel de caçamba para obras, reformas e empresas em ${city}. Frota própria, descarte documentado e atendimento desde 2007. Peça seu orçamento.`;
@@ -263,13 +263,14 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
                 <h2 className="mt-3 text-3xl font-extrabold md:text-5xl">{serviceHeading}</h2>
                 <p className="mt-5 leading-7 text-[#5b6165]">
                   A N&N atua desde 2007, mantém frota própria revisada, caçambas sinalizadas e
-                  documentação do descarte. A única unidade física fica em Jacareí.
+                  documentação do descarte. A sede operacional fica em Jacareí e o atendimento cobre
+                  as duas cidades.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="rounded-2xl bg-[#f7f7f5] p-7 sm:col-span-2">
                   <p className="text-sm font-bold uppercase tracking-wider text-[#746000]">
-                    Única unidade — Jacareí
+                    Sede operacional — Jacareí
                   </p>
                   <address className="mt-3 not-italic text-xl font-bold leading-8">
                     {unitAddress.street}
