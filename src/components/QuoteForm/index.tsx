@@ -19,7 +19,7 @@ const materials = [
 
 const deadlines = [`Hoje`, `Nos próximos 3 dias`, `Nesta semana`, `Só estou pesquisando`] as const;
 
-type FieldName = `neighborhood` | `material` | `deadline`;
+type FieldName = `city` | `neighborhood` | `material` | `deadline`;
 type FormErrors = Partial<Record<FieldName, string>>;
 
 export default function QuoteForm({
@@ -27,13 +27,14 @@ export default function QuoteForm({
   placement = `formulario_orcamento`,
   title = `Receba seu orçamento pelo WhatsApp`,
 }: Props) {
-  const [city, setCity] = useState<City>(initialCity || `São José dos Campos`);
+  const [city, setCity] = useState<City | ``>(initialCity || ``);
   const [neighborhood, setNeighborhood] = useState(``);
   const [material, setMaterial] = useState(``);
   const [deadline, setDeadline] = useState(``);
   const [errors, setErrors] = useState<FormErrors>({});
   const [submitError, setSubmitError] = useState(``);
   const neighborhoodRef = useRef<HTMLInputElement>(null);
+  const cityRef = useRef<HTMLSelectElement>(null);
   const materialRef = useRef<HTMLSelectElement>(null);
   const deadlineRef = useRef<HTMLSelectElement>(null);
 
@@ -59,6 +60,7 @@ export default function QuoteForm({
     event.preventDefault();
 
     const nextErrors: FormErrors = {};
+    if (!city) nextErrors.city = `Selecione a cidade.`;
     if (!neighborhood.trim()) nextErrors.neighborhood = `Informe seu bairro.`;
     if (!material) nextErrors.material = `Selecione o tipo de material.`;
     if (!deadline) nextErrors.deadline = `Selecione quando você precisa da caçamba.`;
@@ -70,6 +72,7 @@ export default function QuoteForm({
       let firstInvalidField: HTMLElement | null = deadlineRef.current;
       if (nextErrors.material) firstInvalidField = materialRef.current;
       if (nextErrors.neighborhood) firstInvalidField = neighborhoodRef.current;
+      if (nextErrors.city) firstInvalidField = cityRef.current;
       window.requestAnimationFrame(() => firstInvalidField?.focus());
       return;
     }
@@ -92,12 +95,13 @@ export default function QuoteForm({
 
       if (whatsappWindow) {
         whatsappWindow.opener = null;
-        trackWhatsAppClick(city, placement);
+        void trackWhatsAppClick(city, placement, { destinationUrl: whatsappUrl });
         return;
       }
 
-      trackWhatsAppClick(city, placement);
-      window.location.assign(whatsappUrl);
+      void trackWhatsAppClick(city, placement, { destinationUrl: whatsappUrl }).then(() => {
+        window.location.assign(whatsappUrl);
+      });
     } catch {
       setSubmitError(`Não foi possível abrir o WhatsApp. Verifique sua conexão e tente novamente.`);
     }
@@ -127,13 +131,27 @@ export default function QuoteForm({
             </span>
           ) : (
             <select
-              className={fieldClass(false)}
+              ref={cityRef}
+              className={fieldClass(Boolean(errors.city))}
               value={city}
-              onChange={(event) => setCity(event.target.value as City)}
+              onChange={(event) => {
+                setCity(event.target.value as City);
+                clearError(`city`);
+              }}
+              aria-invalid={Boolean(errors.city)}
+              aria-describedby={errors.city ? `city-error` : undefined}
             >
+              <option value="" disabled>
+                Selecione
+              </option>
               <option>São José dos Campos</option>
               <option>Jacareí</option>
             </select>
+          )}
+          {errors.city && (
+            <span id="city-error" className="mt-1 block text-sm font-semibold text-[#b42318]">
+              {errors.city}
+            </span>
           )}
         </label>
 

@@ -1,11 +1,15 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import Head from 'next/head';
-import { buildWhatsAppUrl } from '@configs/contact';
+import { redirectToWhatsApp } from '@configs/contact';
 import HomeScreen from '@home/screens/Main';
 
 const Contato = () => {
+  const redirectStarted = useRef(false);
+
   useEffect(() => {
-    window.location.replace(buildWhatsAppUrl());
+    if (redirectStarted.current) return;
+    redirectStarted.current = true;
+    void redirectToWhatsApp({ placement: `redirect_contato` });
   }, []);
 
   return (

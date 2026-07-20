@@ -2,6 +2,7 @@ const siteUrl = `https://www.nncacambas.com.br`;
 
 const pages = [
   `/`,
+  `/aluguel-de-cacamba`,
   `/aluguel-de-cacamba-sjc`,
   `/aluguel-de-cacamba-jacarei`,
   `/blog/aluguel-de-cacamba`,

@@ -7,7 +7,7 @@ import SalesHeader from '@global-components/SalesHeader';
 import { WHATSAPP_DISPLAY } from '@configs/contact';
 
 export type CityLandingConfig = {
-  city: `São José dos Campos` | `Jacareí`;
+  city: `São José dos Campos` | `Jacareí` | `SJC e Jacareí`;
   slug: string;
   localProof: string;
 };
@@ -41,6 +41,10 @@ const forbiddenMaterials = [
 
 export default function CityLanding({ city, slug, localProof }: CityLandingConfig) {
   const isJacarei = city === `Jacareí`;
+  const isRegional = city === `SJC e Jacareí`;
+  let serviceHeading = `Atendimento em SJC, com base em Jacareí`;
+  if (isJacarei) serviceHeading = `Única unidade da N&N em Jacareí`;
+  if (isRegional) serviceHeading = `Atendimento nas duas cidades, com base em Jacareí`;
   const canonical = `https://www.nncacambas.com.br/${slug}`;
   const title = `Aluguel de Caçamba em ${city} | N&N Caçambas`;
   const description = `Aluguel de caçamba para obras, reformas e empresas em ${city}. Frota própria, descarte documentado e atendimento desde 2007. Peça seu orçamento.`;
@@ -71,7 +75,12 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
     telephone: `+55 12 99661-1332`,
     foundingDate: `2007`,
     description,
-    areaServed: { '@type': `City`, name: city },
+    areaServed: isRegional
+      ? [
+          { '@type': `City`, name: `São José dos Campos` },
+          { '@type': `City`, name: `Jacareí` },
+        ]
+      : { '@type': `City`, name: city },
     address: {
       '@type': `PostalAddress`,
       streetAddress: unitAddress.street,
@@ -150,7 +159,10 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
                   ✓ {localProof}
                 </div>
               </div>
-              <QuoteForm initialCity={city} placement="form_hero_landing" />
+              <QuoteForm
+                initialCity={isRegional ? undefined : city}
+                placement={isRegional ? `form_hero_regional` : `form_hero_landing`}
+              />
             </div>
           </section>
 
@@ -248,11 +260,7 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
                 <p className="text-sm font-bold tracking-[0.16em] uppercase text-[#897000]">
                   Atendimento em {city}
                 </p>
-                <h2 className="mt-3 text-3xl font-extrabold md:text-5xl">
-                  {isJacarei
-                    ? `Única unidade da N&N em Jacareí`
-                    : `Atendimento em SJC, com base em Jacareí`}
-                </h2>
+                <h2 className="mt-3 text-3xl font-extrabold md:text-5xl">{serviceHeading}</h2>
                 <p className="mt-5 leading-7 text-[#5b6165]">
                   A N&N atua desde 2007, mantém frota própria revisada, caçambas sinalizadas e
                   documentação do descarte. A única unidade física fica em Jacareí.
