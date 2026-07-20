@@ -9,6 +9,15 @@ const nextConfig = {
   },
   swcMinify: true,
   reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: '/avaliar',
+        destination: 'https://g.page/r/Caw77fgukVTOEBM/review',
+        permanent: false,
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

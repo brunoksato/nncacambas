@@ -5,7 +5,7 @@ const AluguelDeCacambaJacarei = () => (
   <CityLanding
     city="Jacareí"
     slug="aluguel-de-cacamba-jacarei"
-    localProof="Sede operacional em Jacareí, com atendimento local desde 2012."
+    localProof="Atendimento em Jacareí com frota própria, entrega e retirada agendadas."
   />
 );
 

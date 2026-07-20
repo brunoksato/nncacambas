@@ -4,20 +4,46 @@ import BlogAction from '@global-components/BlogAction';
 import Image from '@global-components/Image';
 
 const AluguelDeCacambaBlog = () => {
+  const title = `Quanto custa alugar uma caçamba em SJC e Jacareí?`;
+  const description = `Veja o que define o preço do aluguel de caçamba em São José dos Campos e Jacareí, quais dados enviar e como contratar entrega e retirada.`;
+  const canonical = `https://www.nncacambas.com.br/blog/aluguel-de-cacamba`;
+  const articleSchema = {
+    '@context': `https://schema.org`,
+    '@type': `Article`,
+    headline: title,
+    description,
+    image: `https://www.nncacambas.com.br/assets/cacamba.webp`,
+    datePublished: `2023-06-12`,
+    dateModified: `2026-07-20`,
+    inLanguage: `pt-BR`,
+    mainEntityOfPage: canonical,
+    author: {
+      '@type': `Organization`,
+      name: `N&N Caçambas`,
+      url: `https://www.nncacambas.com.br/`,
+    },
+    publisher: {
+      '@type': `Organization`,
+      name: `N&N Caçambas`,
+      url: `https://www.nncacambas.com.br/`,
+      logo: {
+        '@type': `ImageObject`,
+        url: `https://www.nncacambas.com.br/assets/nnLogo.webp`,
+      },
+    },
+  };
+
   return (
     <>
       <Head>
-        <title>Como alugar uma caçamba tira entulho? | N&N Caçambas</title>
-        <meta name="abstract" content="Como alugar uma caçamba tira entulho?" />
-        <meta name="title" content={`Como alugar uma caçamba tira entulho? | N&N Caçambas`} />
-        <link rel="canonical" href={`https://nncacambas.com.br/blog/aluguel-de-cacamba`} />
-        <meta name="description" content={`Como alugar uma caçamba tira entulho? `} />
-        <meta
-          property="og:title"
-          content={`Como alugar uma caçamba tira entulho? | N&N Caçambas`}
-        />
-        <meta property="og:description" content="Como alugar uma caçamba tira entulho?" />
-        <meta property="og:url" content={`https://nncacambas.com.br/blog/aluguel-de-cacamba`} />
+        <title>{title} | N&N Caçambas</title>
+        <meta name="abstract" content={description} />
+        <meta name="title" content={`${title} | N&N Caçambas`} />
+        <link rel="canonical" href={canonical} />
+        <meta name="description" content={description} />
+        <meta property="og:title" content={`${title} | N&N Caçambas`} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
         <meta
           property="og:image"
           itemProp="image"
@@ -28,20 +54,24 @@ const AluguelDeCacambaBlog = () => {
         <meta property="og:image:height" content="192" />
         <meta property="article:author" content={`https://www.nncacambas.com.br`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={`https://nncacambas.com.br/blog/aluguel-de-cacamba`} />
-        <meta name="twitter:title" content="N&N Caçambas | Twitter" />
-        <meta name="twitter:description" content="Como alugar uma caçamba tira entulho?" />
+        <meta name="twitter:url" content={canonical} />
+        <meta name="twitter:title" content={`${title} | N&N Caçambas`} />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content={`https://www.nncacambas.com.br/assets/cacamba.webp`} />
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="index,follow,max-image-preview:large" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
       </Head>
       <div className="my-16">
         <section className="px-6 mx-auto mb-12 max-w-7xl xl:px-4">
           <article className="box-border w-full">
             <h1 className="text-2xl leading-[140%] text-black-4 font-extrabold md:text-5xl md:leading-[48px]">
-              Como alugar uma caçamba tira entulho?
+              {title}
             </h1>
             <p className="mt-3 text-sm text-gray-2 md:mt-3 md:mb-4 md:text-base md:leading-6">
-              Publicado em 12 de junho de 2023
+              Publicado em 12 de junho de 2023 · atualizado em 20 de julho de 2026
             </p>
             <div className="flex flex-row flex-wrap items-center space-y-4 md:space-y-0 md:flex-row">
               <div className="flex flex-wrap">
@@ -103,12 +133,10 @@ const AluguelDeCacambaBlog = () => {
                 <h3 className="slate-h3">Quanto custa alugar uma caçamba tira entulho?</h3>
                 <div></div>
                 <div>
-                  O custo do aluguel de uma caçamba tira entulho pode variar de acordo com a região,
-                  a empresa, o tamanho da caçamba, o tipo de entulho e o tempo de permanência. Em
-                  média, o valor do aluguel de uma caçamba estacionária é de R$ 370 por um período
-                  de um a cinco dias úteis. Se você precisar da caçamba por mais tempo ou se
-                  ultrapassar a capacidade máxima da caçamba (10 centímetros acima da borda), você
-                  pode pagar multas adicionais.
+                  O valor depende da cidade, do bairro, do acesso ao endereço, do tipo de resíduo e
+                  do período de permanência. Por isso, preços genéricos encontrados na internet
+                  podem não representar o custo real do serviço. Para receber um orçamento correto
+                  em SJC ou Jacareí, informe o endereço, o material e quando precisa da caçamba.
                 </div>
                 <div></div>
                 <h3 className="slate-h3">

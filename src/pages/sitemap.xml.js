@@ -1,21 +1,51 @@
 const siteUrl = `https://www.nncacambas.com.br`;
 
 const pages = [
-  `/`,
-  `/aluguel-de-cacamba`,
-  `/aluguel-de-cacamba-sjc`,
-  `/aluguel-de-cacamba-jacarei`,
-  `/blog/aluguel-de-cacamba`,
-  `/blog/locacao-de-cacamba`,
+  {
+    path: `/`,
+    image: `/assets/nnCacambas_caminhao.webp`,
+    caption: `Caminhão e caçambas da N&N Caçambas`,
+  },
+  {
+    path: `/aluguel-de-cacamba`,
+    image: `/assets/cacamba.webp`,
+    caption: `Aluguel de caçamba em SJC e Jacareí`,
+  },
+  {
+    path: `/aluguel-de-cacamba-sjc`,
+    image: `/assets/cacamba.webp`,
+    caption: `Aluguel de caçamba em São José dos Campos`,
+  },
+  {
+    path: `/aluguel-de-cacamba-jacarei`,
+    image: `/assets/cacamba.webp`,
+    caption: `Aluguel de caçamba em Jacareí`,
+  },
+  {
+    path: `/blog/aluguel-de-cacamba`,
+    image: `/assets/cacamba.webp`,
+    caption: `Caçamba estacionária para entulho de obra`,
+  },
+  {
+    path: `/blog/locacao-de-cacamba`,
+    image: `/assets/grupoCacambas.webp`,
+    caption: `Grupo de caçambas estacionárias`,
+  },
 ];
 
 function generateSiteMap() {
   return `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${pages
   .map(
-    (path) => `  <url>
+    ({ path, image, caption }) => `  <url>
     <loc>${siteUrl}${path}</loc>
+    <lastmod>2026-07-20</lastmod>
+    <image:image>
+      <image:loc>${siteUrl}${image}</image:loc>
+      <image:caption>${caption}</image:caption>
+    </image:image>
   </url>`,
   )
   .join(`\n`)}

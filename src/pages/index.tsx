@@ -7,12 +7,26 @@ const Home = () => {
   const localBusinessSchema = {
     '@context': `https://schema.org`,
     '@type': `LocalBusiness`,
+    '@id': `https://www.nncacambas.com.br/#empresa`,
     name: `N&N Caçambas`,
+    alternateName: `N&N Locação de Caçambas`,
     url: `https://www.nncacambas.com.br/`,
-    image: `https://www.nncacambas.com.br/assets/cacamba.webp`,
+    logo: `https://www.nncacambas.com.br/assets/nnLogo.webp`,
+    image: [
+      `https://www.nncacambas.com.br/assets/cacamba.webp`,
+      `https://www.nncacambas.com.br/assets/nnCacambas_caminhao.webp`,
+      `https://www.nncacambas.com.br/assets/grupoCacambas.webp`,
+    ],
     telephone: `+55 12 99661-1332`,
     foundingDate: `2007`,
     description,
+    contactPoint: {
+      '@type': `ContactPoint`,
+      telephone: `+55 12 99661-1332`,
+      contactType: `orçamentos`,
+      areaServed: `BR`,
+      availableLanguage: `Portuguese`,
+    },
     address: {
       '@type': `PostalAddress`,
       streetAddress: `Avenida Egídio Antônio Coimbra, 739`,
@@ -25,6 +39,42 @@ const Home = () => {
       { '@type': `City`, name: `São José dos Campos` },
       { '@type': `City`, name: `Jacareí` },
     ],
+    hasOfferCatalog: {
+      '@type': `OfferCatalog`,
+      name: `Serviços de caçamba`,
+      itemListElement: [
+        {
+          '@type': `Offer`,
+          itemOffered: {
+            '@type': `Service`,
+            name: `Aluguel de caçamba para entulho de obra`,
+          },
+        },
+        {
+          '@type': `Offer`,
+          itemOffered: {
+            '@type': `Service`,
+            name: `Entrega e retirada de caçamba estacionária`,
+          },
+        },
+        {
+          '@type': `Offer`,
+          itemOffered: {
+            '@type': `Service`,
+            name: `Destinação documentada de resíduos de construção`,
+          },
+        },
+      ],
+    },
+  };
+  const websiteSchema = {
+    '@context': `https://schema.org`,
+    '@type': `WebSite`,
+    '@id': `https://www.nncacambas.com.br/#site`,
+    url: `https://www.nncacambas.com.br/`,
+    name: `N&N Caçambas`,
+    inLanguage: `pt-BR`,
+    publisher: { '@id': `https://www.nncacambas.com.br/#empresa` },
   };
   const faqSchema = {
     '@context': `https://schema.org`,
@@ -42,6 +92,10 @@ const Home = () => {
         `A caçamba pode ficar na rua?`,
         `Depende das regras e condições do local. O endereço precisa ser informado para verificar sinalização, espaço e eventual autorização.`,
       ],
+      [
+        `Quais materiais não podem ser colocados na caçamba?`,
+        `Não aceitamos lixo doméstico, resíduos hospitalares, produtos químicos, tintas, solventes ou outros materiais perigosos.`,
+      ],
     ].map(([question, answer]) => ({
       '@type': `Question`,
       name: question,
@@ -56,6 +110,7 @@ const Home = () => {
         <meta name="description" content={description} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
         <meta property="og:url" content="https://www.nncacambas.com.br/" />
         <meta property="og:title" content="Aluguel de Caçamba em SJC e Jacareí | N&N Caçambas" />
         <meta property="og:image" content="https://www.nncacambas.com.br/og.png" />
@@ -75,6 +130,10 @@ const Home = () => {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
         />
         <script
           type="application/ld+json"

@@ -4,17 +4,46 @@ import BlogAction from '@global-components/BlogAction';
 import Image from '@global-components/Image';
 
 const LocacaoDeCacambaBlog = () => {
+  const title = `Locação de caçamba em SJC e Jacareí: guia completo`;
+  const description = `Entenda como funciona a locação de caçamba em São José dos Campos e Jacareí, quais resíduos são aceitos e como organizar entrega e retirada.`;
+  const canonical = `https://www.nncacambas.com.br/blog/locacao-de-cacamba`;
+  const articleSchema = {
+    '@context': `https://schema.org`,
+    '@type': `Article`,
+    headline: title,
+    description,
+    image: `https://www.nncacambas.com.br/assets/grupoCacambas.webp`,
+    datePublished: `2023-06-12`,
+    dateModified: `2026-07-20`,
+    inLanguage: `pt-BR`,
+    mainEntityOfPage: canonical,
+    author: {
+      '@type': `Organization`,
+      name: `N&N Caçambas`,
+      url: `https://www.nncacambas.com.br/`,
+    },
+    publisher: {
+      '@type': `Organization`,
+      name: `N&N Caçambas`,
+      url: `https://www.nncacambas.com.br/`,
+      logo: {
+        '@type': `ImageObject`,
+        url: `https://www.nncacambas.com.br/assets/nnLogo.webp`,
+      },
+    },
+  };
+
   return (
     <>
       <Head>
-        <title>Tudo sobre locação de caçamba | N&N Caçambas</title>
-        <meta name="abstract" content="Tudo sobre locação de caçamba" />
-        <meta name="title" content={`Tudo sobre locação de caçamba | N&N Caçambas`} />
-        <link rel="canonical" href={`https://nncacambas.com.br/blog/locacao-de-cacamba`} />
-        <meta name="description" content={`Tudo sobre locação de caçamba `} />
-        <meta property="og:title" content={`Tudo sobre locação de caçamba | N&N Caçambas`} />
-        <meta property="og:description" content="Tudo sobre locação de caçamba" />
-        <meta property="og:url" content={`https://nncacambas.com.br/blog/locacao-de-cacamba`} />
+        <title>{title} | N&N Caçambas</title>
+        <meta name="abstract" content={description} />
+        <meta name="title" content={`${title} | N&N Caçambas`} />
+        <link rel="canonical" href={canonical} />
+        <meta name="description" content={description} />
+        <meta property="og:title" content={`${title} | N&N Caçambas`} />
+        <meta property="og:description" content={description} />
+        <meta property="og:url" content={canonical} />
         <meta
           property="og:image"
           itemProp="image"
@@ -25,23 +54,27 @@ const LocacaoDeCacambaBlog = () => {
         <meta property="og:image:height" content="192" />
         <meta property="article:author" content={`https://www.nncacambas.com.br`} />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={`https://nncacambas.com.br/blog/locacao-de-cacamba`} />
-        <meta name="twitter:title" content="N&N Caçambas | Twitter" />
-        <meta name="twitter:description" content="Como alugar uma caçamba tira entulho?" />
+        <meta name="twitter:url" content={canonical} />
+        <meta name="twitter:title" content={`${title} | N&N Caçambas`} />
+        <meta name="twitter:description" content={description} />
         <meta
           name="twitter:image"
           content={`https://www.nncacambas.com.br/assets/grupoCacambas.webp`}
         />
-        <meta name="robots" content="index,follow" />
+        <meta name="robots" content="index,follow,max-image-preview:large" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        />
       </Head>
       <div className="my-16">
         <section className="px-6 mx-auto mb-12 max-w-7xl xl:px-4">
           <article className="box-border w-full">
             <h1 className="text-2xl leading-[140%] text-black-4 font-extrabold md:text-5xl md:leading-[48px]">
-              Tudo sobre locação de caçamba
+              {title}
             </h1>
             <p className="mt-3 text-sm text-gray-2 md:mt-3 md:mb-4 md:text-base md:leading-6">
-              Publicado em 12 de junho de 2023
+              Publicado em 12 de junho de 2023 · atualizado em 20 de julho de 2026
             </p>
             <div className="flex flex-row flex-wrap items-center space-y-4 md:space-y-0 md:flex-row">
               <div className="flex flex-wrap">
@@ -184,8 +217,8 @@ const LocacaoDeCacambaBlog = () => {
                 </div>
                 <div></div>
                 <div>
-                  Os resíduos devem ser separados de acordo com a sua classe, conforme a Resolução
-                  307/2002 do Conama:
+                  Os resíduos devem ser separados de acordo com a classificação aplicável do Conama
+                  e com a orientação recebida no atendimento:
                 </div>
                 <div></div>
                 <ul className="slate-ul">
@@ -198,13 +231,13 @@ const LocacaoDeCacambaBlog = () => {
                   <li className="slate-li">
                     <div className="relative">
                       - Classe B: resíduos recicláveis para outras destinações, como plástico,
-                      papel, metal, vidro, madeira etc.;
+                      papel, metal, vidro, madeira e gesso etc.;
                     </div>
                   </li>
                   <li className="slate-li">
                     <div className="relative">
-                      - Classe C: resíduos sem tecnologia disponível ou economicamente viável para
-                      reciclagem ou recuperação, como gesso, isopor, lã de vidro etc.;
+                      - Classe C: resíduos para os quais ainda não há tecnologia ou aplicação
+                      economicamente viável de reciclagem ou recuperação;
                     </div>
                   </li>
                   <li className="slate-li">
@@ -217,15 +250,14 @@ const LocacaoDeCacambaBlog = () => {
                 <div>
                   O espaço disponível para instalar a caçamba deve ser suficiente para que ela fique
                   estacionada sem atrapalhar o trânsito de pedestres ou veículos. O ideal é que a
-                  caçamba fique dentro do terreno da obra ou atividade, mas caso não seja possível,
-                  você pode solicitar uma autorização para colocá-la na calçada ou na rua.
+                  caçamba fique dentro do terreno da obra. Para uso da via pública, o endereço deve
+                  ser analisado conforme as regras do município e as condições do local.
                 </div>
                 <div></div>
                 <div>
-                  O tempo que você vai precisar da caçamba depende da duração da sua obra ou
-                  atividade. O prazo máximo para a permanência da caçamba no local é de 30 dias, mas
-                  você pode solicitar a troca ou a retirada antes desse período, caso a caçamba
-                  esteja cheia ou você não precise mais dela.
+                  O período de permanência depende do local e das regras municipais. A equipe
+                  confirma o prazo no orçamento; se a caçamba encher antes, solicite a retirada ou a
+                  troca sem ultrapassar o limite superior do equipamento.
                 </div>
                 <div></div>
                 <div>

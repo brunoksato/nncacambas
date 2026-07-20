@@ -63,7 +63,7 @@ const Home = () => {
                 Atendimento em SJC e Jacareí
               </p>
               <h1 className="max-w-3xl mt-5 text-4xl font-black leading-[1.04] tracking-[-0.03em] sm:text-5xl lg:text-7xl">
-                Precisa de uma caçamba? Peça agora pelo WhatsApp.
+                Aluguel de caçamba em SJC e Jacareí. Peça pelo WhatsApp.
               </h1>
               <p className="max-w-2xl mt-6 text-lg leading-8 text-white/75 lg:text-xl">
                 Caçambas para obras, reformas, residências e empresas, com entrega e retirada
@@ -83,6 +83,20 @@ const Home = () => {
                 <span>✓ Frota própria</span>
                 <span>✓ CTR do descarte</span>
               </div>
+              <nav aria-label="Páginas de atendimento local" className="flex flex-wrap gap-4 mt-6">
+                <Link
+                  href="/aluguel-de-cacamba-sjc"
+                  className="text-sm font-extrabold text-[#fcd535] underline decoration-[#fcd535]/40 underline-offset-4 hover:decoration-[#fcd535]"
+                >
+                  Caçamba em SJC →
+                </Link>
+                <Link
+                  href="/aluguel-de-cacamba-jacarei"
+                  className="text-sm font-extrabold text-[#fcd535] underline decoration-[#fcd535]/40 underline-offset-4 hover:decoration-[#fcd535]"
+                >
+                  Caçamba em Jacareí →
+                </Link>
+              </nav>
             </div>
 
             <QuoteForm placement="form_hero_home" />

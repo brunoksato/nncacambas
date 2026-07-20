@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import CallToAction from '@global-components/CallToAction';
 import Image from '@global-components/Image';
 import QuoteForm from '@global-components/QuoteForm';
@@ -39,6 +40,41 @@ const forbiddenMaterials = [
   `Materiais acima do limite da caçamba`,
 ] as const;
 
+const coverage = {
+  'São José dos Campos': {
+    shortName: `SJC`,
+    neighborhoods: [
+      `Centro`,
+      `Jardim Aquarius`,
+      `Urbanova`,
+      `Vila Ema`,
+      `Jardim Satélite`,
+      `Bosque dos Eucaliptos`,
+      `Parque Industrial`,
+      `Jardim das Indústrias`,
+      `Santana`,
+      `Vista Verde`,
+      `Eugênio de Melo`,
+    ],
+    copy: `Entregamos e retiramos caçambas em diferentes regiões de São José dos Campos. Informe o bairro e o endereço para confirmarmos disponibilidade, acesso do caminhão e as condições do local.`,
+  },
+  Jacareí: {
+    shortName: `Jacareí`,
+    neighborhoods: [
+      `Centro`,
+      `Parque dos Sinos`,
+      `Villa Branca`,
+      `Jardim Santa Maria`,
+      `Cidade Salvador`,
+      `São João`,
+      `Jardim Califórnia`,
+      `Jardim das Indústrias`,
+      `Parque Meia Lua`,
+    ],
+    copy: `Atendemos obras, reformas, residências e empresas em diferentes regiões de Jacareí. Informe o bairro e o endereço para confirmarmos disponibilidade, acesso do caminhão e as condições do local.`,
+  },
+} as const;
+
 export default function CityLanding({ city, slug, localProof }: CityLandingConfig) {
   const isJacarei = city === `Jacareí`;
   const isRegional = city === `SJC e Jacareí`;
@@ -48,6 +84,9 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
   const canonical = `https://www.nncacambas.com.br/${slug}`;
   const title = `Aluguel de Caçamba em ${city} | N&N Caçambas`;
   const description = `Aluguel de caçamba para obras, reformas e empresas em ${city}. Frota própria, descarte documentado e atendimento desde 2007. Peça seu orçamento.`;
+  const businessId = `https://www.nncacambas.com.br/#empresa`;
+  let localCoverage: (typeof coverage)[keyof typeof coverage] | null = null;
+  if (city === `São José dos Campos` || city === `Jacareí`) localCoverage = coverage[city];
   const faqs = [
     {
       question: `Quanto custa alugar uma caçamba em ${city}?`,
@@ -69,8 +108,10 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
   const businessSchema = {
     '@context': `https://schema.org`,
     '@type': `LocalBusiness`,
+    '@id': businessId,
     name: `N&N Caçambas`,
-    url: canonical,
+    url: `https://www.nncacambas.com.br/`,
+    logo: `https://www.nncacambas.com.br/assets/nnLogo.webp`,
     image: `https://www.nncacambas.com.br/assets/cacamba.webp`,
     telephone: `+55 12 99661-1332`,
     foundingDate: `2007`,
@@ -90,6 +131,57 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
       addressCountry: `BR`,
     },
   };
+  const serviceSchema = {
+    '@context': `https://schema.org`,
+    '@type': `Service`,
+    '@id': `${canonical}#servico`,
+    name: `Aluguel de caçamba em ${city}`,
+    serviceType: `Locação, entrega e retirada de caçambas estacionárias`,
+    description,
+    url: canonical,
+    provider: { '@id': businessId },
+    areaServed: isRegional
+      ? [
+          { '@type': `City`, name: `São José dos Campos` },
+          { '@type': `City`, name: `Jacareí` },
+        ]
+      : { '@type': `City`, name: city },
+  };
+  const breadcrumbSchema = {
+    '@context': `https://schema.org`,
+    '@type': `BreadcrumbList`,
+    itemListElement: [
+      {
+        '@type': `ListItem`,
+        position: 1,
+        name: `Início`,
+        item: `https://www.nncacambas.com.br/`,
+      },
+      ...(isRegional
+        ? [
+            {
+              '@type': `ListItem`,
+              position: 2,
+              name: `Aluguel de caçamba`,
+              item: canonical,
+            },
+          ]
+        : [
+            {
+              '@type': `ListItem`,
+              position: 2,
+              name: `Aluguel de caçamba`,
+              item: `https://www.nncacambas.com.br/aluguel-de-cacamba`,
+            },
+            {
+              '@type': `ListItem`,
+              position: 3,
+              name: city,
+              item: canonical,
+            },
+          ]),
+    ],
+  };
   const faqSchema = {
     '@context': `https://schema.org`,
     '@type': `FAQPage`,
@@ -108,6 +200,7 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
         <meta name="robots" content="index,follow,max-image-preview:large" />
         <link rel="canonical" href={canonical} />
         <meta property="og:type" content="website" />
+        <meta property="og:locale" content="pt_BR" />
         <meta property="og:url" content={canonical} />
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
@@ -115,10 +208,21 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
         <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonical} />
+        <meta name="twitter:title" content={title} />
+        <meta name="twitter:description" content={description} />
         <meta name="twitter:image" content="https://www.nncacambas.com.br/og.png" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(businessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
         />
         <script
           type="application/ld+json"
@@ -144,6 +248,23 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
             <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#111313] via-[#111313]/95 to-[#111313]/75" />
             <div className="grid max-w-screen-xl gap-10 px-4 py-14 mx-auto lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:px-0 lg:py-20">
               <div>
+                <nav aria-label="Navegação estrutural" className="mb-5 text-sm text-white/55">
+                  <Link href="/" className="hover:text-white">
+                    Início
+                  </Link>
+                  <span aria-hidden="true"> / </span>
+                  {isRegional ? (
+                    <span>Aluguel de caçamba</span>
+                  ) : (
+                    <>
+                      <Link href="/aluguel-de-cacamba" className="hover:text-white">
+                        Aluguel de caçamba
+                      </Link>
+                      <span aria-hidden="true"> / </span>
+                      <span>{city}</span>
+                    </>
+                  )}
+                </nav>
                 <p className="inline-flex rounded-full border border-[#fcd535]/40 bg-[#fcd535]/10 px-4 py-2 text-xs font-black tracking-[0.16em] uppercase text-[#fcd535]">
                   Aluguel de caçamba em {city}
                 </p>
@@ -214,7 +335,7 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
             </div>
           </section>
 
-          <section className="bg-[#111313] text-white">
+          <section id="materiais" className="scroll-mt-24 bg-[#111313] text-white">
             <div className="grid max-w-screen-xl gap-10 px-4 py-16 mx-auto lg:grid-cols-2 lg:px-0 lg:py-24">
               <div>
                 <p className="text-sm font-bold tracking-[0.16em] uppercase text-[#fcd535]">
@@ -254,7 +375,10 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
             </div>
           </section>
 
-          <section className="max-w-screen-xl px-4 py-16 mx-auto lg:px-0 lg:py-24">
+          <section
+            id="descarte-responsavel"
+            className="scroll-mt-24 max-w-screen-xl px-4 py-16 mx-auto lg:px-0 lg:py-24"
+          >
             <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
               <div>
                 <p className="text-sm font-bold tracking-[0.16em] uppercase text-[#897000]">
@@ -263,8 +387,8 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
                 <h2 className="mt-3 text-3xl font-extrabold md:text-5xl">{serviceHeading}</h2>
                 <p className="mt-5 leading-7 text-[#5b6165]">
                   A N&N atua desde 2007, mantém frota própria revisada, caçambas sinalizadas e
-                  documentação do descarte. A sede operacional fica em Jacareí e o atendimento cobre
-                  as duas cidades.
+                  documentação do descarte. Atendemos Jacareí e São José dos Campos; a sede
+                  operacional e o endereço para atendimento presencial ficam em Jacareí.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -293,6 +417,90 @@ export default function CityLanding({ city, slug, localProof }: CityLandingConfi
                   </p>
                 </div>
               </div>
+            </div>
+          </section>
+
+          <section className="border-y border-black/10 bg-[#f7f7f5]">
+            <div className="max-w-screen-xl px-4 py-16 mx-auto lg:px-0 lg:py-20">
+              {isRegional ? (
+                <>
+                  <div className="max-w-3xl">
+                    <p className="text-sm font-bold tracking-[0.16em] uppercase text-[#897000]">
+                      Cobertura local
+                    </p>
+                    <h2 className="mt-3 text-3xl font-extrabold md:text-5xl">
+                      Escolha sua cidade para ver o atendimento local
+                    </h2>
+                    <p className="mt-5 leading-7 text-[#5b6165]">
+                      As páginas locais mostram informações específicas e levam seu pedido ao
+                      WhatsApp já identificado com a cidade correta.
+                    </p>
+                  </div>
+                  <div className="grid gap-5 mt-10 md:grid-cols-2">
+                    <Link
+                      href="/aluguel-de-cacamba-sjc"
+                      className="rounded-2xl bg-[#111313] p-7 text-white transition hover:-translate-y-1 hover:shadow-xl"
+                    >
+                      <p className="text-xs font-black uppercase tracking-[0.14em] text-[#fcd535]">
+                        Área atendida
+                      </p>
+                      <h3 className="mt-4 text-2xl font-extrabold">São José dos Campos</h3>
+                      <p className="mt-3 leading-7 text-white/65">
+                        Veja bairros, materiais aceitos e peça orçamento para SJC.
+                      </p>
+                      <p className="mt-6 font-black text-[#fcd535]">Ver atendimento em SJC →</p>
+                    </Link>
+                    <Link
+                      href="/aluguel-de-cacamba-jacarei"
+                      className="rounded-2xl bg-[#fcd535] p-7 text-black transition hover:-translate-y-1 hover:shadow-xl"
+                    >
+                      <p className="text-xs font-black uppercase tracking-[0.14em] text-black/50">
+                        Área atendida
+                      </p>
+                      <h3 className="mt-4 text-2xl font-extrabold">Jacareí</h3>
+                      <p className="mt-3 leading-7 text-black/65">
+                        Veja bairros, materiais aceitos e peça orçamento para Jacareí.
+                      </p>
+                      <p className="mt-6 font-black">Ver atendimento em Jacareí →</p>
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                localCoverage && (
+                  <>
+                    <div className="max-w-3xl">
+                      <p className="text-sm font-bold tracking-[0.16em] uppercase text-[#897000]">
+                        Cobertura em {localCoverage.shortName}
+                      </p>
+                      <h2 className="mt-3 text-3xl font-extrabold md:text-5xl">
+                        Bairros atendidos em {city}
+                      </h2>
+                      <p className="mt-5 leading-7 text-[#5b6165]">{localCoverage.copy}</p>
+                    </div>
+                    <ul
+                      className="flex flex-wrap gap-3 mt-8"
+                      aria-label={`Bairros atendidos em ${city}`}
+                    >
+                      {localCoverage.neighborhoods.map((neighborhood) => (
+                        <li
+                          key={neighborhood}
+                          className="rounded-full border border-black/10 bg-white px-4 py-2 text-sm font-bold"
+                        >
+                          {neighborhood}
+                        </li>
+                      ))}
+                      <li className="rounded-full border border-[#cfad13] bg-[#fff6ca] px-4 py-2 text-sm font-bold">
+                        Outros bairros sob consulta
+                      </li>
+                    </ul>
+                    <CallToAction
+                      city={city}
+                      placement="bairros_landing"
+                      label={`Consultar meu bairro em ${localCoverage.shortName}`}
+                    />
+                  </>
+                )
+              )}
             </div>
           </section>
 
