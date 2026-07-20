@@ -35,6 +35,9 @@ export default function SalesFooter() {
             <Link href="/blog/locacao-de-cacamba" className="hover:text-[#fcd535]">
               Guia de locação
             </Link>
+            <Link href="/guia-descarte-entulho-jacarei-sjc" className="hover:text-[#fcd535]">
+              Guia de descarte
+            </Link>
           </nav>
         </div>
       </div>

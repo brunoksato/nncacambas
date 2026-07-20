@@ -268,6 +268,29 @@ const Home = () => {
           </div>
         </section>
 
+        <section className="border-y border-black/10 bg-[#f7f7f5]">
+          <div className="grid max-w-screen-xl gap-8 px-4 py-12 mx-auto md:grid-cols-[1fr_auto] md:items-center lg:px-0">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.16em] text-[#897000]">
+                Guia gratuito com fontes oficiais
+              </p>
+              <h2 className="mt-3 text-3xl font-black tracking-[-0.02em] md:text-4xl">
+                Calcule o volume de entulho e consulte as regras de SJC e Jacareí
+              </h2>
+              <p className="max-w-3xl mt-4 leading-7 text-[#5b6165]">
+                Veja quando usar PEV ou LEV, os cuidados para colocar uma caçamba e uma estimativa
+                de quantas unidades sua obra pode precisar.
+              </p>
+            </div>
+            <Link
+              href="/guia-descarte-entulho-jacarei-sjc"
+              className="inline-flex items-center justify-center rounded-lg bg-[#111313] px-6 py-4 font-black text-white transition hover:bg-black"
+            >
+              Abrir guia e calculadora →
+            </Link>
+          </div>
+        </section>
+
         <section className="bg-[#111313] text-white">
           <div className="grid max-w-screen-xl gap-12 px-4 py-16 mx-auto lg:grid-cols-[0.7fr_1.3fr] lg:px-0 lg:py-24">
             <div>

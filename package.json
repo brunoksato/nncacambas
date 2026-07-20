@@ -13,6 +13,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "seo:dr": "node scripts/check-domain-rating.mjs",
     "prepare": "husky install"
   },
   "lint-staged": {

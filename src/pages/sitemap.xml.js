@@ -31,6 +31,11 @@ const pages = [
     image: `/assets/grupoCacambas.webp`,
     caption: `Grupo de caçambas estacionárias`,
   },
+  {
+    path: `/guia-descarte-entulho-jacarei-sjc`,
+    image: `/assets/cacamba.webp`,
+    caption: `Guia de descarte de entulho em Jacareí e São José dos Campos`,
+  },
 ];
 
 function generateSiteMap() {
