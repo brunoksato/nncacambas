@@ -32,8 +32,8 @@ export default function SalesFooter() {
             <Link href="/aluguel-de-cacamba-jacarei" className="hover:text-[#fcd535]">
               Atendimento em Jacareí
             </Link>
-            <Link href="/blog/locacao-de-cacamba" className="hover:text-[#fcd535]">
-              Guia de locação
+            <Link href="/blog" className="hover:text-[#fcd535]">
+              Conteúdos e guias
             </Link>
             <Link href="/guia-descarte-entulho-jacarei-sjc" className="hover:text-[#fcd535]">
               Guia de descarte

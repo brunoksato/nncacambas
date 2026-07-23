@@ -32,6 +32,16 @@ const pages = [
     caption: `Grupo de caçambas estacionárias`,
   },
   {
+    path: `/blog`,
+    image: `/assets/grupoCacambas.webp`,
+    caption: `Conteúdos sobre caçambas e descarte de entulho`,
+  },
+  {
+    path: `/blog/comprovante-destinacao-entulho-jacarei-sjc`,
+    image: `/assets/cacamba.webp`,
+    caption: `Comprovante de destinação de entulho em Jacareí e São José dos Campos`,
+  },
+  {
     path: `/guia-descarte-entulho-jacarei-sjc`,
     image: `/assets/cacamba.webp`,
     caption: `Guia de descarte de entulho em Jacareí e São José dos Campos`,
@@ -46,7 +56,7 @@ ${pages
   .map(
     ({ path, image, caption }) => `  <url>
     <loc>${siteUrl}${path}</loc>
-    <lastmod>2026-07-20</lastmod>
+    <lastmod>2026-07-23</lastmod>
     <image:image>
       <image:loc>${siteUrl}${image}</image:loc>
       <image:caption>${caption}</image:caption>
