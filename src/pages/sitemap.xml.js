@@ -42,6 +42,11 @@ const pages = [
     caption: `Comprovante de destinação de entulho em Jacareí e São José dos Campos`,
   },
   {
+    path: `/blog/cacamba-na-rua-ou-calcada-jacarei-sjc`,
+    image: `/assets/cacamba.webp`,
+    caption: `Posicionamento de caçamba em Jacareí e São José dos Campos`,
+  },
+  {
     path: `/guia-descarte-entulho-jacarei-sjc`,
     image: `/assets/cacamba.webp`,
     caption: `Guia de descarte de entulho em Jacareí e São José dos Campos`,
@@ -56,7 +61,7 @@ ${pages
   .map(
     ({ path, image, caption }) => `  <url>
     <loc>${siteUrl}${path}</loc>
-    <lastmod>2026-07-23</lastmod>
+    <lastmod>2026-07-26</lastmod>
     <image:image>
       <image:loc>${siteUrl}${image}</image:loc>
       <image:caption>${caption}</image:caption>

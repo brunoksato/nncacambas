@@ -6,6 +6,12 @@ import SalesHeader from '@global-components/SalesHeader';
 
 const articles = [
   {
+    href: `/blog/cacamba-na-rua-ou-calcada-jacarei-sjc`,
+    title: `Caçamba na rua ou calçada: onde pode ficar em Jacareí e SJC?`,
+    description: `Veja cuidados e regras locais para planejar o posicionamento da caçamba antes da entrega.`,
+    date: `26 de julho de 2026`,
+  },
+  {
     href: `/blog/comprovante-destinacao-entulho-jacarei-sjc`,
     title: `Comprovante de destinação de entulho: como conferir em Jacareí e SJC`,
     description: `Saiba quais informações pedir à empresa e por que o registro da destinação importa na sua obra.`,
