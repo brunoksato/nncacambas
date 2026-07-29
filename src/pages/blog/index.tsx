@@ -6,6 +6,12 @@ import SalesHeader from '@global-components/SalesHeader';
 
 const articles = [
   {
+    href: `/blog/separar-entulho-reforma-jacarei-sjc`,
+    title: `Como separar o entulho da reforma antes de pedir caçamba`,
+    description: `Organize resíduos minerais, recicláveis e itens de risco antes da retirada em Jacareí e SJC.`,
+    date: `29 de julho de 2026`,
+  },
+  {
     href: `/blog/cacamba-na-rua-ou-calcada-jacarei-sjc`,
     title: `Caçamba na rua ou calçada: onde pode ficar em Jacareí e SJC?`,
     description: `Veja cuidados e regras locais para planejar o posicionamento da caçamba antes da entrega.`,

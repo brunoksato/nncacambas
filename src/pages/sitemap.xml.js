@@ -47,6 +47,11 @@ const pages = [
     caption: `Posicionamento de caçamba em Jacareí e São José dos Campos`,
   },
   {
+    path: `/blog/separar-entulho-reforma-jacarei-sjc`,
+    image: `/assets/cacamba.webp`,
+    caption: `Separação de entulho de reforma em Jacareí e São José dos Campos`,
+  },
+  {
     path: `/guia-descarte-entulho-jacarei-sjc`,
     image: `/assets/cacamba.webp`,
     caption: `Guia de descarte de entulho em Jacareí e São José dos Campos`,
@@ -61,7 +66,7 @@ ${pages
   .map(
     ({ path, image, caption }) => `  <url>
     <loc>${siteUrl}${path}</loc>
-    <lastmod>2026-07-26</lastmod>
+    <lastmod>2026-07-29</lastmod>
     <image:image>
       <image:loc>${siteUrl}${image}</image:loc>
       <image:caption>${caption}</image:caption>
