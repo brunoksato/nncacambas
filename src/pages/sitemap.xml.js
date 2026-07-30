@@ -22,6 +22,11 @@ const pages = [
     caption: `Aluguel de caçamba em Jacareí`,
   },
   {
+    path: `/aluguel-de-caminhao-para-empresas`,
+    image: `/assets/caminhao3.webp`,
+    caption: `Caminhões sem motorista para empresas em São José dos Campos e Jacareí`,
+  },
+  {
     path: `/blog/aluguel-de-cacamba`,
     image: `/assets/cacamba.webp`,
     caption: `Caçamba estacionária para entulho de obra`,
@@ -66,7 +71,7 @@ ${pages
   .map(
     ({ path, image, caption }) => `  <url>
     <loc>${siteUrl}${path}</loc>
-    <lastmod>2026-07-29</lastmod>
+    <lastmod>2026-07-30</lastmod>
     <image:image>
       <image:loc>${siteUrl}${image}</image:loc>
       <image:caption>${caption}</image:caption>

@@ -4,9 +4,15 @@ import Image from '@global-components/Image';
 
 type Props = {
   city?: string;
+  ctaMessage?: string;
+  placement?: string;
 };
 
-export default function SalesHeader({ city = `SJC e Jacareí` }: Props) {
+export default function SalesHeader({
+  city = `SJC e Jacareí`,
+  ctaMessage,
+  placement = `cabecalho_vendas`,
+}: Props) {
   return (
     <header className="sticky top-0 z-50 border-b border-black/10 bg-[#fcd535]/95 backdrop-blur">
       <div className="flex h-[76px] max-w-screen-xl items-center justify-between gap-4 px-4 mx-auto lg:px-0">
@@ -31,8 +37,9 @@ export default function SalesHeader({ city = `SJC e Jacareí` }: Props) {
         </div>
         <CallToAction
           city={city}
-          placement="cabecalho_vendas"
+          placement={placement}
           label="Pedir orçamento"
+          message={ctaMessage}
           className="!mt-0 !py-3 !px-4"
         />
       </div>

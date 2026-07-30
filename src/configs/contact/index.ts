@@ -10,6 +10,7 @@ type WhatsAppUrlOptions = {
 type WhatsAppTrackingOptions = {
   destinationUrl?: string;
   dispatchTimeoutMs?: number;
+  eventDetails?: Record<string, string>;
 };
 
 export function buildWhatsAppUrl({ city, message }: WhatsAppUrlOptions = {}) {
@@ -32,7 +33,11 @@ function whatsappTrackingUrl(url: string) {
 export function trackWhatsAppClick(
   city: string,
   placement: string,
-  { destinationUrl, dispatchTimeoutMs = 600 }: WhatsAppTrackingOptions = {},
+  {
+    destinationUrl,
+    dispatchTimeoutMs = 600,
+    eventDetails: customEventDetails,
+  }: WhatsAppTrackingOptions = {},
 ) {
   if (typeof window === `undefined`) return Promise.resolve();
 
@@ -44,6 +49,7 @@ export function trackWhatsAppClick(
     page_path: pagePath,
     page_location: window.location.href,
     link_url: whatsappTrackingUrl(destinationUrl || buildWhatsAppUrl({ city })),
+    ...customEventDetails,
   };
 
   window.dataLayer = window.dataLayer || [];

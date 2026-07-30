@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Carousel from 'react-multi-carousel';
 import 'react-multi-carousel/lib/styles.css';
 import CallToAction from '@global-components/CallToAction';
@@ -35,6 +36,12 @@ const SectionCompany = () => {
             onde a N&N opera desde 2012.
           </p>
           <CallToAction placement="empresa_home" />
+          <Link
+            href="/aluguel-de-caminhao-para-empresas"
+            className="mt-4 inline-flex font-bold text-[#6f5b00] underline decoration-2 underline-offset-4 hover:text-black"
+          >
+            Ver locação de caminhões sem motorista para empresas
+          </Link>
         </div>
         <div className="relative w-full lg:w-[55%]">
           <Carousel
