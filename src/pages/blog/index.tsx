@@ -6,6 +6,12 @@ import SalesHeader from '@global-components/SalesHeader';
 
 const articles = [
   {
+    href: `/blog/terra-escavacao-descarte-jacarei-sjc`,
+    title: `Terra de escavação é entulho? Como planejar a retirada em Jacareí e SJC`,
+    description: `Saiba como informar terra e solo de escavação e planejar a destinação sem descarte improvisado.`,
+    date: `1º de agosto de 2026`,
+  },
+  {
     href: `/blog/separar-entulho-reforma-jacarei-sjc`,
     title: `Como separar o entulho da reforma antes de pedir caçamba`,
     description: `Organize resíduos minerais, recicláveis e itens de risco antes da retirada em Jacareí e SJC.`,

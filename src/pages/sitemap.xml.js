@@ -57,6 +57,11 @@ const pages = [
     caption: `Separação de entulho de reforma em Jacareí e São José dos Campos`,
   },
   {
+    path: `/blog/terra-escavacao-descarte-jacarei-sjc`,
+    image: `/assets/cacamba.webp`,
+    caption: `Planejamento da retirada de terra de escavação em Jacareí e São José dos Campos`,
+  },
+  {
     path: `/guia-descarte-entulho-jacarei-sjc`,
     image: `/assets/cacamba.webp`,
     caption: `Guia de descarte de entulho em Jacareí e São José dos Campos`,
