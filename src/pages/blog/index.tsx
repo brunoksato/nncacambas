@@ -6,6 +6,12 @@ import SalesHeader from '@global-components/SalesHeader';
 
 const articles = [
   {
+    href: `/blog/residuos-poda-jardinagem-jacarei-sjc`,
+    title: `Resíduos de poda e jardinagem: PEV, LEV ou caçamba em Jacareí e SJC?`,
+    description: `Saiba onde levar galhos, folhas e restos de jardinagem e quando planejar uma retirada em caçamba.`,
+    date: `4 de agosto de 2026`,
+  },
+  {
     href: `/blog/terra-escavacao-descarte-jacarei-sjc`,
     title: `Terra de escavação é entulho? Como planejar a retirada em Jacareí e SJC`,
     description: `Saiba como informar terra e solo de escavação e planejar a destinação sem descarte improvisado.`,

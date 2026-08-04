@@ -40,6 +40,7 @@ const pages = [
     path: `/blog`,
     image: `/assets/grupoCacambas.webp`,
     caption: `Conteúdos sobre caçambas e descarte de entulho`,
+    lastmod: `2026-08-04`,
   },
   {
     path: `/blog/comprovante-destinacao-entulho-jacarei-sjc`,
@@ -62,6 +63,12 @@ const pages = [
     caption: `Planejamento da retirada de terra de escavação em Jacareí e São José dos Campos`,
   },
   {
+    path: `/blog/residuos-poda-jardinagem-jacarei-sjc`,
+    image: `/assets/cacamba.webp`,
+    caption: `Resíduos de poda e jardinagem em Jacareí e São José dos Campos`,
+    lastmod: `2026-08-04`,
+  },
+  {
     path: `/guia-descarte-entulho-jacarei-sjc`,
     image: `/assets/cacamba.webp`,
     caption: `Guia de descarte de entulho em Jacareí e São José dos Campos`,
@@ -74,9 +81,9 @@ function generateSiteMap() {
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 ${pages
   .map(
-    ({ path, image, caption }) => `  <url>
+    ({ path, image, caption, lastmod = `2026-07-30` }) => `  <url>
     <loc>${siteUrl}${path}</loc>
-    <lastmod>2026-07-30</lastmod>
+    <lastmod>${lastmod}</lastmod>
     <image:image>
       <image:loc>${siteUrl}${image}</image:loc>
       <image:caption>${caption}</image:caption>
