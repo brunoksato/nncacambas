@@ -69,6 +69,12 @@ const pages = [
     lastmod: `2026-08-04`,
   },
   {
+    path: `/blog/telhas-fibrocimento-amianto-descarte-jacarei-sjc`,
+    image: `/assets/cacamba.webp`,
+    caption: `Descarte de telhas de fibrocimento e amianto em Jacareí e São José dos Campos`,
+    lastmod: `2026-08-07`,
+  },
+  {
     path: `/guia-descarte-entulho-jacarei-sjc`,
     image: `/assets/cacamba.webp`,
     caption: `Guia de descarte de entulho em Jacareí e São José dos Campos`,

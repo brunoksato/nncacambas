@@ -6,6 +6,12 @@ import SalesHeader from '@global-components/SalesHeader';
 
 const articles = [
   {
+    href: `/blog/telhas-fibrocimento-amianto-descarte-jacarei-sjc`,
+    title: `Telha de fibrocimento ou amianto: como descartar em Jacareí e SJC`,
+    description: `Planeje a retirada segura de telhas e caixas d’água antigas sem misturar amianto em uma caçamba comum.`,
+    date: `7 de agosto de 2026`,
+  },
+  {
     href: `/blog/residuos-poda-jardinagem-jacarei-sjc`,
     title: `Resíduos de poda e jardinagem: PEV, LEV ou caçamba em Jacareí e SJC?`,
     description: `Saiba onde levar galhos, folhas e restos de jardinagem e quando planejar uma retirada em caçamba.`,
